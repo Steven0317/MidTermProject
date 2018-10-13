@@ -7,6 +7,14 @@ using System.Security.Cryptography;
 
 namespace MedPortal
 {
+
+    /*  right now this is using 
+     *  Users as a place holder data
+     *  structure in the LINQ queries
+     *  just need to update when we 
+     *  write that part
+     */
+      
     class Encryption
     {
       

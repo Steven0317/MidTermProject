@@ -26,7 +26,8 @@ namespace MedPortal
 
         public Individual() { }
         
-        public Individual(string first, string last, string user, string pass, int age, string dob, string allergies, int social, string pcp, string insuranceProvider, int cc, string name, string expDate, int ccv)
+        public Individual(string first, string last, string user, string pass, int age, string dob, string allergies,
+                          int social, string pcp, string insuranceProvider, int cc, string name, string expDate, int ccv)
         {
             this.first = first;
             this.last = last;
