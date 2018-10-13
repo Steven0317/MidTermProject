@@ -15,10 +15,11 @@ namespace MedPortal
      *  write that part
      */
       
-    class Encryption
+    class Hash
     {
       
         private static RNGCryptoServiceProvider rngCSP = new RNGCryptoServiceProvider();
+        private LoginPage User = new LoginPage();
 
         //generate a hashed and salted pw on user create
         public static string Sha256(string input)
@@ -77,17 +78,22 @@ namespace MedPortal
         //requests salt from storage
         public static byte [] GetSalt(string username)
         {
-            return from user in Users
-                   where user.username == username
-                   select user.salt;
+           return  (from user in LoginPage.UserCollection
+                   where user.user == username
+                   select user.salt).First();
+              
         }
 
         //request stored hash 
         public static string GetHash(string username)
         {
-            return from user in Users
-                   where user.username == username
-                   select user.hash;
+            
+
+            return (from user in LoginPage.UserCollection
+                   where user.user == username
+                   select user.pass).First();
+                   
+           
         }
 
         //test if user entered hash and stored hash are the same

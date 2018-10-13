@@ -3,31 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MedPortal
 {
+    [XmlRoot(ElementName ="Inividual")]
     public class Individual
     {
+        [XmlAttribute(DataType = "string")]
         public string first;
+        [XmlAttribute(DataType = "string")]
         public string last;
+        [XmlAttribute(DataType = "string")]
         public string user;
+        [XmlAttribute(DataType = "string")]
         public string pass;
+        [XmlAttribute(DataType = "int")]
         public int age;
+        [XmlAttribute(DataType = "string")]
         public string dob;
+        [XmlAttribute(DataType = "string")]
         public string allergies;
+        [XmlAttribute(DataType = "int")]
         public int social;
+        [XmlAttribute(DataType = "string")]
         public string pcp;
+        [XmlAttribute(DataType = "string")]
         public string insuranceProvider;
-        public int cc;
-        public string name;
-        public string expDate;
-        public int ccv;
+        [XmlAttribute(DataType = "byte []")]
+        public byte[] salt;
+        
 
 
         public Individual() { }
         
         public Individual(string first, string last, string user, string pass, int age, string dob, string allergies,
-                          int social, string pcp, string insuranceProvider, int cc, string name, string expDate, int ccv)
+                          int social, string pcp, string insuranceProvider, byte[] salt)
         {
             this.first = first;
             this.last = last;
@@ -39,10 +50,8 @@ namespace MedPortal
             this.social = social;
             this.pcp = pcp;
             this.insuranceProvider = insuranceProvider;
-            this.cc = cc;
-            this.name = name;
-            this.expDate = expDate;
-            this.ccv = ccv;
+            this.salt = salt;
+            
         }
 
         public string FirstName { get { return first; } set { value = first; } }
@@ -55,10 +64,7 @@ namespace MedPortal
         public int SSN { get {return social; } set {value = social; } }
         public string PCP { get {return pcp; } set {value = pcp; } }
         public string IP { get {return insuranceProvider; } set {value = insuranceProvider; } }
-        public int CC { get {return cc; } set {value = cc; } }
-        public string Name { get {return name; } set {value = name; } }
-        public string EXP { get {return expDate; } set {value = expDate; } }
-        public int CCV { get {return ccv; } set {value = ccv; } }
+        public byte [] Salt { get { return salt; } set { value = salt; } }
 
     }
 }
