@@ -7,13 +7,6 @@ using System.Security.Cryptography;
 
 namespace MedPortal
 {
-
-    /*  right now this is using 
-     *  Users as a place holder data
-     *  structure in the LINQ queries
-     *  just need to update when we 
-     *  write that part
-     */
       
     class Hash
     {
@@ -78,21 +71,34 @@ namespace MedPortal
         //requests salt from storage
         public static byte [] GetSalt(string username)
         {
-           return  (from user in LoginPage.UserCollection
-                   where user.user == username
-                   select user.salt).First();
-              
+            try
+            {
+                return (from user in LoginPage.UserCollection
+                        where user.user == username
+                        select Convert.FromBase64String(user.salt)).First();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
 
         //request stored hash 
         public static string GetHash(string username)
         {
-            
 
-            return (from user in LoginPage.UserCollection
-                   where user.user == username
-                   select user.pass).First();
-                   
+            try
+            {
+                return (from user in LoginPage.UserCollection
+                        where user.user == username
+                        select user.pass).First();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
            
         }
 
@@ -102,8 +108,15 @@ namespace MedPortal
             byte[] salt = GetSalt(username);
             string testhash = Sha256(password, salt);
             string userHash = GetHash(username);
-            bool validLogin = userHash.Equals(testhash);
-            return validLogin ;
+
+            if (!string.IsNullOrEmpty(userHash) && !string.IsNullOrEmpty(testhash))
+            {
+                return userHash.Equals(testhash);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         //combines salt and hash byte arrays

@@ -30,8 +30,8 @@ namespace MedPortal
         public string pcp;
         [XmlAttribute(DataType = "string")]
         public string insuranceProvider;
-        [XmlAttribute(DataType = "byte []")]
-        public byte[] salt;
+        [XmlAttribute(DataType = "string")]
+        public string salt;
         
 
 
@@ -50,7 +50,7 @@ namespace MedPortal
             this.social = social;
             this.pcp = pcp;
             this.insuranceProvider = insuranceProvider;
-            this.salt = salt;
+            this.salt = Convert.ToBase64String(salt);
             
         }
 
@@ -64,7 +64,7 @@ namespace MedPortal
         public int SSN { get {return social; } set {value = social; } }
         public string PCP { get {return pcp; } set {value = pcp; } }
         public string IP { get {return insuranceProvider; } set {value = insuranceProvider; } }
-        public byte [] Salt { get { return salt; } set { value = salt; } }
+        public byte [] Salt { get { return Convert.FromBase64String(salt); } set { value = Convert.FromBase64String(salt); } }
 
     }
 }

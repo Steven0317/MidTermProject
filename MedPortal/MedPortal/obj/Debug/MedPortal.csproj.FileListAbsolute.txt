@@ -15,3 +15,5 @@ C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.c
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.csproj.CoreCompileInputs.cache
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.exe
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.pdb
+C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\NewUser.g.cs
+C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\NewUser.baml
