@@ -24,8 +24,8 @@ namespace MedPortal
         public string dob;
         [XmlAttribute(DataType = "string")]
         public string allergies;
-        [XmlAttribute(DataType = "int")]
-        public int social;
+        [XmlAttribute(DataType = "string")]
+        public string social;
         [XmlAttribute(DataType = "string")]
         public string pcp;
         [XmlAttribute(DataType = "string")]
@@ -38,7 +38,7 @@ namespace MedPortal
         public Individual() { }
         
         public Individual(string first, string last, string user, string pass, int age, string dob, string allergies,
-                          int social, string pcp, string insuranceProvider, byte[] salt)
+                          string social, string pcp, string insuranceProvider, byte[] salt)
         {
             this.first = first;
             this.last = last;
@@ -61,7 +61,7 @@ namespace MedPortal
         public int Age { get {return age; } set {value = age; } }
         public string DOB { get {return dob; } set {value = dob; } }
         public string Allergies { get {return allergies; } set {value = allergies; } }
-        public int SSN { get {return social; } set {value = social; } }
+        public string SSN { get {return social; } set {value = social; } }
         public string PCP { get {return pcp; } set {value = pcp; } }
         public string IP { get {return insuranceProvider; } set {value = insuranceProvider; } }
         public byte [] Salt { get { return Convert.FromBase64String(salt); } set { value = Convert.FromBase64String(salt); } }
