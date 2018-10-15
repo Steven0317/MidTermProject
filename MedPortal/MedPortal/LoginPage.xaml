@@ -37,8 +37,8 @@
         <TextBlock Text="Username:  " Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold"/>
         <TextBlock Text="Password:  " Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" />
 
-        <TextBox x:Name="username" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
-        <PasswordBox x:Name="password" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+        <TextBox x:Name="username" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Template="{StaticResource TextBoxBaseControlTemplate}" />
+        <PasswordBox x:Name="password" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Template="{DynamicResource passwordbox}" />
 
         <TextBlock Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center">                                
             <Hyperlink Click="Hyperlink_Click">
@@ -46,6 +46,6 @@
             </Hyperlink>
         </TextBlock>
 
-        <Button x:Name="login_button" Content="Login" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Click="login_button_Click"  />
+        <Button x:Name="login_button" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="5" Grid.Column="3" Height="25" Grid.ColumnSpan="2" Click="login_button_Click" Content="Login" Foreground="White"  Template="{StaticResource buttonborder}" Background="#FF32C8FF" />
     </Grid>
 </Page>

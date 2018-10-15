@@ -23,36 +23,37 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition />
-            <ColumnDefinition Width="20"/>
             <ColumnDefinition />
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition />
-            
-            
+
+
+
         </Grid.ColumnDefinitions>
+        <TextBlock Text="Personal Information" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="18"/>
 
+        <TextBlock x:Name="FLName" VerticalAlignment="Center" HorizontalAlignment="Left" Text="First Name: " Grid.Row="1" Grid.Column="1" FontWeight="DemiBold"/>
+        <TextBox x:Name="FLBox" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}"/>
+        
+        <TextBlock x:Name="Social" VerticalAlignment="Center" HorizontalAlignment="Left" Text="SSN: " Grid.Row="2" Grid.Column="1" FontWeight="DemiBold" />
+        <xctk:MaskedTextBox x:Name="SBox" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="999 - 99 - 9999" Template="{StaticResource TextBoxBaseControlTemplate}"/>
+        
+        
+        
+        
+        
+        <TextBlock x:Name="UName" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Username: " Grid.Row="4" Grid.Column="1" FontWeight="DemiBold" Margin="0,0,46,0"/>
+        <TextBox x:Name="UBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="110" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" />
 
-        <TextBlock x:Name="FName" VerticalAlignment="Center" HorizontalAlignment="Left" Text="First Name: " Grid.Row="1" Grid.Column="3" FontWeight="DemiBold"/>
-        <TextBox x:Name="FBox" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1"/>
+        <TextBlock x:Name="Pword" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Password: " Grid.Row="5" Grid.Column="1" FontWeight="DemiBold"/>
+        <TextBox x:Name="PBox" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" />
 
-        <TextBlock x:Name="LName" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Last Name: " Grid.Row="1" Grid.Column="5" FontWeight="DemiBold" />
-        <TextBox x:Name="LBox" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="1" />
+        <TextBlock x:Name="ConfPword" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Confirm Password: " Grid.Row="5" Grid.Column="1" FontWeight="DemiBold" Margin="0,0,6,0"/>
+        <TextBox x:Name="CPBox" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="110" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" />
 
-        <TextBlock x:Name="UName" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Username: " Grid.Row="2" Grid.Column="3" FontWeight="DemiBold" />
-        <TextBox x:Name="UBox" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" />
+        
 
-        <TextBlock x:Name="Pword" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Password: " Grid.Row="3" Grid.Column="3" FontWeight="DemiBold"/>
-        <TextBox x:Name="PBox" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" />
-
-        <TextBlock x:Name="ConfPword" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Confirm Password: " Grid.Row="3" Grid.Column="5" FontWeight="DemiBold"/>
-        <TextBox x:Name="CPBox" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="1" />
-
-        <TextBlock x:Name="Social" VerticalAlignment="Center" HorizontalAlignment="Left" Text="SSN: " Grid.Row="4" Grid.Column="3" FontWeight="DemiBold" />
-        <xctk:MaskedTextBox x:Name="SBox" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="1" Mask="999 - 99 - 9999"/>
-
+        <TextBlock x:Name="PCP" VerticalAlignment="Center" HorizontalAlignment="Right" Text="PCP: " Grid.Row="4" Grid.Column="1" FontWeight="DemiBold" Margin="0,0,80,0"/>
+        <TextBox x:Name="PCPBox" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="110" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" />
 
     </Grid>
 </Page>
