@@ -37,8 +37,8 @@
         <TextBlock Text="Username:  " Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold"/>
         <TextBlock Text="Password:  " Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" />
 
-        <TextBox x:Name="username" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Template="{StaticResource TextBoxBaseControlTemplate}" />
-        <PasswordBox x:Name="password" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Template="{DynamicResource passwordbox}" />
+        <TextBox x:Name="username" TextAlignment="Center" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Template="{StaticResource TextBoxBaseControlTemplate}" />
+        <PasswordBox x:Name="password" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Template="{DynamicResource passwordbox}" />
 
         <TextBlock Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center">                                
             <Hyperlink Click="Hyperlink_Click">
