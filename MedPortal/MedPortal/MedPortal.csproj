@@ -84,6 +84,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DocBill.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="Individual.cs" />
     <Compile Include="LoginPage.xaml.cs">
