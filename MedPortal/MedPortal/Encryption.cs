@@ -14,30 +14,9 @@ namespace MedPortal
         private static RNGCryptoServiceProvider rngCSP = new RNGCryptoServiceProvider();
         private LoginPage User = new LoginPage();
 
-        //generate a hashed and salted pw on user create
-        public static string Sha256(string input)
-        {
-            if (!string.IsNullOrEmpty(input))
-            {
+       
 
-                byte[] salt = GenerateSalt();
-
-                using (var sha = SHA256.Create())
-                {
-                    var bytes = Encoding.UTF8.GetBytes(input);
-                    byte[] combined = Concat(salt, bytes);
-                    var hash = sha.ComputeHash(combined);
-
-                    return Convert.ToBase64String(hash);
-                }
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        //generates a hashed pw in order to check against stored hash
+        //generates a hashed pw with salt
         public static string Sha256(string password, byte [] salt)
         {
             if (!string.IsNullOrEmpty(password))
