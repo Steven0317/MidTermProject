@@ -8,7 +8,7 @@
 
         <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
             <Border Background="{TemplateBinding Background}" 
-            x:Name="Bd" BorderBrush="#FFE6DDDD"
+            x:Name="Bd" BorderBrush="Gray"
             BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
                 <ScrollViewer x:Name="PART_ContentHost"/>
             </Border>
@@ -28,7 +28,7 @@
         
         <ControlTemplate x:Key="passwordbox" TargetType="{x:Type PasswordBox}">
             <Border Background="{TemplateBinding Background}" 
-        x:Name="Bd" BorderBrush="#FFE6DDDD"
+        x:Name="Bd" BorderBrush="Gray"
         BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
                 <ScrollViewer Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
             </Border>
@@ -45,33 +45,35 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        
+            <ControlTemplate x:Key="buttonborder" TargetType="{x:Type Button}">
 
-        <ControlTemplate x:Key="buttonborder" TargetType="{x:Type Button}">
-           
-            <Grid x:Name="grid">
-                <Border x:Name="border" CornerRadius="10" BorderBrush="#FFE6DDDD" BorderThickness="1">
-                    
-                    <ContentPresenter HorizontalAlignment="Center"
+                <Grid x:Name="grid">
+                <Border x:Name="border" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="#FF1CADC2">
+
+                        <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           TextElement.FontWeight="DemiBold">
-                                          
-                    </ContentPresenter>
-                </Border>
-               
+
+                        </ContentPresenter>
+                </Border> 
+
             </Grid>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="Background" TargetName="border" Value="#FF32C8FF" />
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" TargetName="border" Value="#FF32C8FF" />
                 </Trigger>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" TargetName="border" Value="#FF1CADC2"/>
-                    
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
-                </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                    </Trigger>
 
-            </ControlTemplate.Triggers>
+                </ControlTemplate.Triggers>
+           
+        
         </ControlTemplate>
+
     </Application.Resources>
 </Application>

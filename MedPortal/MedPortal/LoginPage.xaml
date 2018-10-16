@@ -46,6 +46,6 @@
             </Hyperlink>
         </TextBlock>
 
-        <Button x:Name="login_button" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="5" Grid.Column="3" Height="25" Grid.ColumnSpan="2" Click="login_button_Click" Content="Login" Foreground="White"  Template="{StaticResource buttonborder}" Background="#FF32C8FF" />
+        <Button x:Name="login_button" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="5" Grid.Column="3" Height="25" Grid.ColumnSpan="2" Click="login_button_Click" Content="Login" Foreground="White"  Template="{DynamicResource buttonborder}" Background="#FF32C8FF" OpacityMask="#FF32C8FF"  />
     </Grid>
 </Page>
