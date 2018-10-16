@@ -24,5 +24,10 @@ namespace MedPortal
         {
             InitializeComponent();
         }
+
+        private void create_account_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
