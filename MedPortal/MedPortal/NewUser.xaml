@@ -71,10 +71,10 @@
 
             <TextBlock x:Name="Pword" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Password: " Grid.Row="8" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,193,20" Height="16" Width="57"/>
             <TextBox x:Name="PBox" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20"/>
-            <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Center" Text="Must be at least 8 characters long" FontSize="10" Grid.Row="9" Grid.Column="1"  Margin="61,0,51,0" Height="13" Width="149"/>
+            <TextBlock x:Name="pTool" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Must be at least 8 characters long" FontSize="10" Grid.Row="9" Grid.Column="1"  Margin="61,0,51,0" Height="13" Width="149"/>
 
             <TextBlock x:Name="ConfPword" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Confirm Password: " Grid.Row="9" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,146,20" Height="16" Width="104"/>
-            <TextBox x:Name="CPBox"  TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+            <TextBox x:Name="CPBox"  TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" LostFocus="CPBox_LostFocus" />
 
 
             <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Medical Information" Grid.Row="10" Grid.Column="1"  FontSize="18" FontWeight="Bold" Height="24" Width="174" Grid.ColumnSpan="1" Margin="0,0,88,0" />

@@ -25,7 +25,7 @@ namespace MedPortal
 
     public partial class LoginPage : Page
     {
-
+        
         XmlSerializer serializer = new XmlSerializer(typeof(List<Individual>));
         public static List<Individual> UserCollection = new List<Individual>();
         public LoginPage()
