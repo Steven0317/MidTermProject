@@ -7,12 +7,14 @@
       xmlns:local="clr-namespace:MedPortal"
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="900" d:DesignWidth="800"
+      
       Title="NewUser">
     <ScrollViewer>
         <Grid Background="LightGray">
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
                 <RowDefinition Height="55"/>
                 <RowDefinition Height="55"/>
                 <RowDefinition Height="55"/>
@@ -41,55 +43,58 @@
             </Grid.ColumnDefinitions>
 
             <Rectangle Fill="#FF1CADC2" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"   Stroke="#FF1CADC2" VerticalAlignment="Top" Height="30"  Grid.ColumnSpan="3" RadiusY="1" RadiusX="10" />
-            <Rectangle Fill="#FFF4F4F5" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Grid.RowSpan="14"  Stroke="#FF1CADC2" VerticalAlignment="Stretch"  Width="282"  Grid.ColumnSpan="3" RadiusY="10" RadiusX="10"/>
+            <Rectangle Fill="#FFF4F4F5" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Grid.RowSpan="15"  Stroke="#FF1CADC2" VerticalAlignment="Stretch"  Width="425"  Grid.ColumnSpan="3" RadiusY="10" RadiusX="10" Margin="179,0"/>
 
-            <TextBlock Text="     Account Creation" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF4F4F5" FontSize="18"/>
-            
-            <TextBlock Text="Personal Information" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="18"/>
+            <TextBlock Text="     Account Creation" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF4F4F5" FontSize="18" Height="24" Width="171"/>
 
-            <TextBlock x:Name="FLName" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Full Name: " Grid.Row="2" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2"/>
-            <TextBox x:Name="FLBox" TextAlignment="Center"  VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}"/>
+            <TextBlock Text="Personal Information" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="18" Margin="1,0,80,0" Grid.Column="1" Height="24" Width="180" />
 
-            <TextBlock x:Name="Social" VerticalAlignment="Center" HorizontalAlignment="Left" Text="SSN: " Grid.Row="3" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2" />
-            <xctk:MaskedTextBox x:Name="SBox" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="999 - 99 - 9999" Template="{StaticResource TextBoxBaseControlTemplate}"/>
+            <TextBlock x:Name="FName" VerticalAlignment="Center" HorizontalAlignment="Center" Text="First Name: " Grid.Row="2" Grid.Column="1" FontWeight="DemiBold" Margin="11,18,186,21" Height="16" Width="64"/>
+            <TextBox x:Name="FBox" TextAlignment="Center"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Margin="1,0,0,0"/>
 
-            <TextBlock x:Name="Dob" VerticalAlignment="Center" HorizontalAlignment="Left" Text="D.O.B " Grid.Row="4" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2"/>
-            <xctk:MaskedTextBox x:Name="DOBBox" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="99  /  99  /  9999"  Template="{StaticResource TextBoxBaseControlTemplate}"/>
-            <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Left" Text="Format: mm/dd/yyyy " FontSize="10" Grid.Row="5" Grid.Column="1"  Margin="10,0,0,0"/>
+            <TextBlock x:Name="LName" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Last Name: " Grid.Row="3" Grid.Column="1" FontWeight="DemiBold" Margin="10,18,187,21" Height="16" Width="64"/>
+            <TextBox x:Name="LBox" TextAlignment="Center"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Margin="1,0,0,0"/>
 
+            <TextBlock x:Name="Social" VerticalAlignment="Center" HorizontalAlignment="Center" Text="SSN: " Grid.Row="4" Grid.Column="1" FontWeight="DemiBold" Margin="11,20,222,19" Height="16" Width="28" />
+            <xctk:MaskedTextBox x:Name="SBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="110" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="999 - 99 - 9999" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,151,0" Height="20"/>
 
-            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="Account Information" Grid.Row="5" Grid.Column="1" FontWeight="Bold" FontSize="18" />
-
-
-            <TextBlock x:Name="UName" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Username: " Grid.Row="6" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2" />
-            <TextBox x:Name="UBox" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" />
-
-            <TextBlock x:Name="Pword" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Password: " Grid.Row="7" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2"/>
-            <TextBox x:Name="PBox" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}"/>
-            <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Center" Text="Must be at least 8 characters long" FontSize="10" Grid.Row="7" Grid.Column="1"  Margin="10,0,0,0"/>
-
-            <TextBlock x:Name="ConfPword" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Confirm Password: " Grid.Row="8" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2"/>
-            <TextBox x:Name="CPBox"  TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" />
+            <TextBlock x:Name="Dob" VerticalAlignment="Center" HorizontalAlignment="Center" Text="D.O.B " Grid.Row="5" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,217,20"  Height="16" Width="33"/>
+            <xctk:MaskedTextBox x:Name="DOBBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="110" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="99  /  99  /  9999"  Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,151,0" Height="20"/>
+            <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Center" Text="Format: mm/dd/yyyy " FontSize="10" Grid.Row="6" Grid.Column="1"  Margin="1,5,164,0" Height="13" Width="96"/>
 
 
-            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="Medical Information" Grid.Row="9" Grid.Column="1" FontSize="18" FontWeight="Bold" />
-
-            <TextBlock x:Name="PCP" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Primary Care Physician:" Grid.Row="10" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2" />
-            <TextBox x:Name="PCPBox"  TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" />
+            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Account Information" Grid.Row="6" FontWeight="Bold" FontSize="18" Margin="0,0,84,0" Grid.Column="1" Height="24" Width="177" />
 
 
-            <TextBlock x:Name="IP" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Insurance Provider:" Grid.Row="11" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2" />
-            <TextBox x:Name="IPBox"  TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" />
+            <TextBlock x:Name="UName" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Username: " Grid.Row="7" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,189,20" Height="16" Width="61" />
+            <TextBox x:Name="UBox" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="260" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
-            <TextBlock x:Name="Allergies" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Allergies:" Grid.Row="12" Grid.Column="1" FontWeight="DemiBold" Margin="10,0,0,2" />
-            <CheckBox x:Name="soy" Grid.Row="12" Grid.Column="1" Content="Soy" FontWeight="DemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
-            <CheckBox x:Name="dairy" Grid.Row="12" Grid.Column="1" Content="Dairy" FontWeight="DemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
-            <CheckBox x:Name="nut" Grid.Row="12" Grid.Column="1" Content="Nuts" FontWeight="DemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
-            <CheckBox x:Name="fish" Grid.Row="13" Grid.Column="1" Content="Fish" FontWeight="DemiBold" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,7,0"/>
-            <CheckBox x:Name="gluten" Grid.Row="13" Grid.Column="1" Content="Wheat" FontWeight="DemiBold" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            <CheckBox x:Name="egg" Grid.Row="13" Grid.Column="1" Content="Eggs" FontWeight="DemiBold" VerticalAlignment="Top" HorizontalAlignment="Right" />
+            <TextBlock x:Name="Pword" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Password: " Grid.Row="8" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,193,20" Height="16" Width="57"/>
+            <TextBox x:Name="PBox" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20"/>
+            <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Center" Text="Must be at least 8 characters long" FontSize="10" Grid.Row="9" Grid.Column="1"  Margin="61,0,51,0" Height="13" Width="149"/>
 
-            <Button x:Name="create_account_button" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="13" Grid.Column="1" Height="25" Grid.ColumnSpan="1" Click="create_account_button_Click" Content="Create Account" Foreground="White"  Template="{DynamicResource buttonborder}" Background="#FF32C8FF" OpacityMask="#FF32C8FF"  />
+            <TextBlock x:Name="ConfPword" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Confirm Password: " Grid.Row="9" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,146,20" Height="16" Width="104"/>
+            <TextBox x:Name="CPBox"  TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+
+
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Medical Information" Grid.Row="10" Grid.Column="1"  FontSize="18" FontWeight="Bold" Height="24" Width="174" Grid.ColumnSpan="1" Margin="0,0,88,0" />
+
+            <TextBlock x:Name="PCP" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Primary Care Physician:" Grid.Row="11" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,123,20" Height="16" Width="127" />
+            <TextBox x:Name="PCPBox"  TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260"  Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+
+
+            <TextBlock x:Name="IP" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Insurance Provider:" Grid.Row="12" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,145,20" Height="16" Width="105" />
+            <TextBox x:Name="IPBox"  TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260"  Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+
+            <TextBlock x:Name="Allergies" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Allergies:" Grid.Row="13" Grid.Column="1" FontWeight="DemiBold"  Height="16" Width="50" Margin="11,26,200,13" />
+            <CheckBox x:Name="soy" Grid.Row="13" Grid.Column="1" Content="Soy" FontWeight="DemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Width="40" Margin="98,0,123,53" Grid.RowSpan="2" />
+            <CheckBox x:Name="dairy" Grid.Row="14" Grid.Column="1" Content="Dairy" FontWeight="DemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Margin="11,0,201,35" Width="49" />
+            <CheckBox x:Name="nut" Grid.Row="13" Grid.Column="1" Content="Nuts" FontWeight="DemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Width="46" Margin="11,0,204,53" Grid.RowSpan="2" />
+            <CheckBox x:Name="fish" Grid.Row="14" Grid.Column="1" Content="Fish" FontWeight="DemiBold" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="98,5,123,0" Height="15" Width="40"/>
+            <CheckBox x:Name="gluten" Grid.Row="14" Grid.Column="1" Content="Wheat" FontWeight="DemiBold" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="56" Margin="181,5,24,0" />
+            <CheckBox x:Name="egg" Grid.Row="13" Grid.Column="1" Content="Eggs" FontWeight="DemiBold" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="46" Margin="181,42,34,0" Grid.RowSpan="2" />
+
+            <Button x:Name="create_account_button" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260" Grid.Row="14" Grid.Column="1" Height="25" Grid.ColumnSpan="1" Click="create_account_button_Click" Content="Create Account" Foreground="White"  Template="{DynamicResource buttonborder}" Background="#FF32C8FF" OpacityMask="#FF32C8FF"  />
         </Grid>
     </ScrollViewer>
 </Page>

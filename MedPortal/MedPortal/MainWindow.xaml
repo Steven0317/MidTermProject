@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:MedPortal"
         mc:Ignorable="d"
         Title="MedPortal" Height="450" Width="700"
+        WindowState="Maximized"
+        WindowStyle="ThreeDBorderWindow"
         >
     <Grid>
         <Frame Source="/LoginPage.xaml"   NavigationUIVisibility="Hidden"/>
