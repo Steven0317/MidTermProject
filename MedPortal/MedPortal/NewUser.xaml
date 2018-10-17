@@ -56,10 +56,10 @@
             <TextBox x:Name="LBox" TextAlignment="Center"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Margin="1,0,0,0"/>
 
             <TextBlock x:Name="Social" VerticalAlignment="Center" HorizontalAlignment="Center" Text="SSN: " Grid.Row="4" Grid.Column="1" FontWeight="DemiBold" Margin="11,20,222,19" Height="16" Width="28" />
-            <xctk:MaskedTextBox x:Name="SBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="110" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="999 - 99 - 9999" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,151,0" Height="20"/>
+            <xctk:MaskedTextBox x:Name="SBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="110" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="999-99-9999" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,151,0" Height="20"/>
 
             <TextBlock x:Name="Dob" VerticalAlignment="Center" HorizontalAlignment="Center" Text="D.O.B " Grid.Row="5" Grid.Column="1" FontWeight="DemiBold" Margin="11,19,217,20"  Height="16" Width="33"/>
-            <xctk:MaskedTextBox x:Name="DOBBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="110" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="99  /  99  /  9999"  Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,151,0" Height="20"/>
+            <xctk:MaskedTextBox x:Name="DOBBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="110" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Center" Mask="99/99/9999"  Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,151,0" Height="20"/>
             <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Center" Text="Format: mm/dd/yyyy " FontSize="10" Grid.Row="6" Grid.Column="1"  Margin="1,5,164,0" Height="13" Width="96"/>
 
 

@@ -31,17 +31,19 @@ namespace MedPortal
 
         private void create_account_button_Click(object sender, RoutedEventArgs e)
         {
-           if(ValidateEntries())
-            {
 
+            FBox.Text = DOBBox.Text;
+            LBox.Text = SBox.Text;
+            if (ValidateEntries())
+            {
+                FBox.Text = DOBBox.Text;
+                LBox.Text = SBox.Text;
             }
         }
         
         private bool ValidateEntries()
         {
-            //FBox SBox DOBBox LBox
-            //UBox PBox CPBox
-            //PCPBox IPBox 
+            
             bool fValid;
             bool lValid;
             bool SocValid;
@@ -67,10 +69,10 @@ namespace MedPortal
             uValid = string.IsNullOrWhiteSpace(UBox.Text) ? false : true;
             UName.Foreground = uValid ? Brushes.Black : Brushes.Coral;
 
-            pValid = string.IsNullOrWhiteSpace(PBox.Text) || Pword.Text.Length < 8 ? false : true;
+            pValid = string.IsNullOrWhiteSpace(PBox.Text) || Pword.Text.Length >= 8 ? false : true;
             Pword.Foreground = pValid ? Brushes.Coral : Brushes.Black;
 
-            cpValid = string.IsNullOrWhiteSpace(ConfPword.Text) || ConfPword.Text.Length < 8 ? false : true;
+            cpValid = string.IsNullOrWhiteSpace(ConfPword.Text) || ConfPword.Text.Length >= 8 ? false : true;
             ConfPword.Foreground = pValid ? Brushes.Coral : Brushes.Black;
             pcpValid = string.IsNullOrWhiteSpace(PCPBox.Text) ? false : true;
             PCP.Foreground = pcpValid ? Brushes.Black : Brushes.Coral;
@@ -89,7 +91,7 @@ namespace MedPortal
 
         private bool ValidateDigit(string test)
         {
-            return test.All("0123456789".Contains);
+            return test.All("0123456789-/".Contains);
         }
 
         private void CPBox_LostFocus(object sender, RoutedEventArgs e)
