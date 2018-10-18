@@ -38,7 +38,7 @@ namespace MedPortal
         public Individual() { }
         
         public Individual(string first, string last, string user, string pass, int age, string dob, string allergies,
-                          string social, string pcp, string insuranceProvider, byte[] salt)
+                          string social, string pcp, string insuranceProvider, string salt)
         {
             this.first = first;
             this.last = last;
@@ -50,7 +50,7 @@ namespace MedPortal
             this.social = social;
             this.pcp = pcp;
             this.insuranceProvider = insuranceProvider;
-            this.salt = Convert.ToBase64String(salt);
+            this.salt = salt;
             
         }
 
@@ -64,7 +64,7 @@ namespace MedPortal
         public string SSN { get {return social; } set {value = social; } }
         public string PCP { get {return pcp; } set {value = pcp; } }
         public string IP { get {return insuranceProvider; } set {value = insuranceProvider; } }
-        public byte [] Salt { get { return Convert.FromBase64String(salt); } set { value = Convert.FromBase64String(salt); } }
+        public string Salt { get { return salt; } set { value = salt; } }
 
     }
 }

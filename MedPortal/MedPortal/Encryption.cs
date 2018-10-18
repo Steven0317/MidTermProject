@@ -17,7 +17,7 @@ namespace MedPortal
        
 
         //generates a hashed pw with salt
-        public static string Sha256(string password, byte [] salt)
+        public string Sha256(string password, byte [] salt)
         {
             if (!string.IsNullOrEmpty(password))
             {
@@ -38,7 +38,7 @@ namespace MedPortal
         }
 
         //salt bae
-        public static byte[] GenerateSalt()
+        public byte[] GenerateSalt()
         {
             byte[] salt = new byte[32];
             rngCSP.GetBytes(salt);
@@ -71,7 +71,7 @@ namespace MedPortal
             {
                 return (from user in LoginPage.UserCollection
                         where user.user == username
-                        select user.pass).First();
+                        select user.pass).FirstOrDefault();
             }
             catch(Exception ex)
             {
@@ -85,12 +85,20 @@ namespace MedPortal
         public static bool isValid(string password, string username)
         {
             byte[] salt = GetSalt(username);
-            string testhash = Sha256(password, salt);
-            string userHash = GetHash(username);
-
-            if (!string.IsNullOrEmpty(userHash) && !string.IsNullOrEmpty(testhash))
+            if (salt != null)
             {
-                return userHash.Equals(testhash);
+                Hash hash = new Hash();
+                string testhash = hash.Sha256(password, salt);
+                string userHash = GetHash(username);
+
+                if (!string.IsNullOrEmpty(userHash) && !string.IsNullOrEmpty(testhash))
+                {
+                    return userHash.Equals(testhash);
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
@@ -101,12 +109,20 @@ namespace MedPortal
         //combines salt and hash byte arrays
         static byte[] Concat(byte[] a, byte[] b)
         {
-            byte[] output = new byte[a.Length + b.Length];
-            for (int i = 0; i < a.Length; i++)
-                output[i] = a[i];
-            for (int j = 0; j < b.Length; j++)
-                output[a.Length + j] = b[j];
-            return output;
+            try
+            {
+                byte[] output = new byte[a.Length + b.Length];
+                for (int i = 0; i < a.Length; i++)
+                    output[i] = a[i];
+                for (int j = 0; j < b.Length; j++)
+                    output[a.Length + j] = b[j];
+                return output;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.InnerException);
+            }
+            return null;
         }
 
     }

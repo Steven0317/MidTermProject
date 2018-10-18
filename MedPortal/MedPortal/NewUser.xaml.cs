@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace MedPortal
 {
@@ -23,6 +25,7 @@ namespace MedPortal
     {
 
         private LoginPage UserCollection = new LoginPage();
+        XmlSerializer serializer = new XmlSerializer(typeof(List<Individual>));
 
         public NewUser()
         {
@@ -32,12 +35,39 @@ namespace MedPortal
         private void create_account_button_Click(object sender, RoutedEventArgs e)
         {
 
-            FBox.Text = DOBBox.Text;
-            LBox.Text = SBox.Text;
+            
             if (ValidateEntries())
             {
-                FBox.Text = DOBBox.Text;
-                LBox.Text = SBox.Text;
+                int UserAge = 0;
+                int today = DateTime.Today.Year;
+                string[] age = DOBBox.Text.Split('/');
+                UserAge = today - Convert.ToInt32(age[2]);
+
+               
+
+                Hash hash = new Hash();
+                string salt = Convert.ToBase64String(hash.GenerateSalt());
+                string password = hash.Sha256(PBox.Text, Convert.FromBase64String(salt)); ;
+
+                string allergies = ValidateChecks();
+
+                Individual temp = new Individual(FBox.Text, LBox.Text, UBox.Text, password, 
+                                                    UserAge, DOBBox.Text, allergies, SBox.Text, PCPBox.Text, IPBox.Text, salt);
+                LoginPage.UserCollection.Add(temp);
+
+                string path = "users.xml";
+                if (LoginPage.UserCollection.Count == 0 && File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+                else
+                {
+                    using (FileStream filestream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
+                    {
+                        serializer.Serialize(filestream, LoginPage.UserCollection);
+                    }
+
+                }
             }
         }
         
@@ -63,17 +93,18 @@ namespace MedPortal
             SocValid = string.IsNullOrWhiteSpace(SBox.Text) ? false : ValidateDigit(SBox.Text);
             Social.Foreground = SocValid ? Brushes.Black : Brushes.Coral;
 
-            DOBValid = string.IsNullOrWhiteSpace(DOBBox.Text) ? false : ValidateLetter(DOBBox.Text);
+            DOBValid = string.IsNullOrWhiteSpace(DOBBox.Text) ? false : ValidateDigit(DOBBox.Text);
             Dob.Foreground = DOBValid ? Brushes.Black : Brushes.Coral;
 
             uValid = string.IsNullOrWhiteSpace(UBox.Text) ? false : true;
             UName.Foreground = uValid ? Brushes.Black : Brushes.Coral;
 
-            pValid = string.IsNullOrWhiteSpace(PBox.Text) || Pword.Text.Length >= 8 ? false : true;
-            Pword.Foreground = pValid ? Brushes.Coral : Brushes.Black;
+            pValid = string.IsNullOrWhiteSpace(PBox.Text)  || PBox.Text.Length < 8 ? false : true;
+            Pword.Foreground = pValid ? Brushes.Black : Brushes.Coral;
 
-            cpValid = string.IsNullOrWhiteSpace(ConfPword.Text) || ConfPword.Text.Length >= 8 ? false : true;
-            ConfPword.Foreground = pValid ? Brushes.Coral : Brushes.Black;
+            cpValid = string.IsNullOrWhiteSpace(ConfPword.Text)  || CPBox.Text.Length < 8 ? false : true;
+            ConfPword.Foreground = pValid ? Brushes.Black : Brushes.Coral;
+
             pcpValid = string.IsNullOrWhiteSpace(PCPBox.Text) ? false : true;
             PCP.Foreground = pcpValid ? Brushes.Black : Brushes.Coral;
 
@@ -109,5 +140,44 @@ namespace MedPortal
                 ConfPword.Foreground = Brushes.Black;
             }
         }
+
+
+        // only returns one checked item not the whole list come back and fix me!
+        private string ValidateChecks()
+        {
+            string allergies = "";
+
+            if(soy.IsChecked == true)
+            {
+                allergies += "Soy";
+            }
+            else if( dairy.IsChecked == true)
+            {
+                allergies += "Dairy";
+                
+            }
+            else if(nut.IsChecked == true)
+            {
+                allergies += "Nuts";
+            }
+            else if(fish.IsChecked == true)
+            {
+                allergies += "Fish";
+            }
+            else if(gluten.IsChecked == true)
+            {
+                allergies += "Gluten";
+            }
+            else if(egg.IsChecked == true)
+            {
+                allergies += "egg";
+            }
+            else if( string.IsNullOrWhiteSpace(allergies))
+            {
+                allergies = "None";
+            }
+            return allergies;
+        }
+
     }
 }

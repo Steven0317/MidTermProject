@@ -48,13 +48,16 @@ namespace MedPortal
 
         private void login_button_Click(object sender, RoutedEventArgs e)
         {
-            if(ValidateLogin())
+            if (!string.IsNullOrWhiteSpace(username.Text) && !string.IsNullOrWhiteSpace(password.Password))
             {
-                NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
-            }
-            else
-            {
-                error.Visibility = Visibility.Visible;
+                if (ValidateLogin())
+                {
+                    NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
+                }
+                else
+                {
+                    error.Visibility = Visibility.Visible;
+                }
             }
         }
 

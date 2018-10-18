@@ -72,3 +72,5 @@ C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.ex
 C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.pdb
 C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\App.baml
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\App.baml
+C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\HomePage.g.cs
+C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\HomePage.baml
