@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("291_2910758_patient_portal_records_health_record_icon_v6o_icon.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("credit-card.png")]
 
 

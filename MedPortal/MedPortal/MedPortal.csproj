@@ -143,5 +143,17 @@
   <ItemGroup>
     <Resource Include="patientportal_mTm_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="small-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="drugs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dollar-bills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="credit-card.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

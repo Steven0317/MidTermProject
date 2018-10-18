@@ -38,24 +38,29 @@ namespace MedPortal
             
             if (ValidateEntries())
             {
+                // get user age by tokeinzing dob then subtracting
+                // current year fromm dob.
                 int UserAge = 0;
                 int today = DateTime.Today.Year;
                 string[] age = DOBBox.Text.Split('/');
                 UserAge = today - Convert.ToInt32(age[2]);
 
                
-
+                //create pw hash and salt
                 Hash hash = new Hash();
                 string salt = Convert.ToBase64String(hash.GenerateSalt());
                 string password = hash.Sha256(PBox.Text, Convert.FromBase64String(salt)); ;
 
+                //concatenate all alleriges together
                 string allergies = ValidateChecks();
+    
 
                 Individual temp = new Individual(FBox.Text, LBox.Text, UBox.Text, password, 
                                                     UserAge, DOBBox.Text, allergies, SBox.Text, PCPBox.Text, IPBox.Text, salt);
                 LoginPage.UserCollection.Add(temp);
 
                 string path = "users.xml";
+
                 if (LoginPage.UserCollection.Count == 0 && File.Exists(path))
                 {
                     File.Delete(path);
@@ -141,38 +146,37 @@ namespace MedPortal
             }
         }
 
-
-        // only returns one checked item not the whole list come back and fix me!
+ 
         private string ValidateChecks()
         {
             string allergies = "";
 
             if(soy.IsChecked == true)
             {
-                allergies += "Soy";
+                allergies += " " +"Soy";
             }
-            else if( dairy.IsChecked == true)
+            if( dairy.IsChecked == true)
             {
-                allergies += "Dairy";
+                allergies += " " + "Dairy";
                 
             }
-            else if(nut.IsChecked == true)
+            if(nut.IsChecked == true)
             {
-                allergies += "Nuts";
+                allergies += " " + "Nuts";
             }
-            else if(fish.IsChecked == true)
+            if(fish.IsChecked == true)
             {
-                allergies += "Fish";
+                allergies += " " + "Fish";
             }
-            else if(gluten.IsChecked == true)
+            if(gluten.IsChecked == true)
             {
-                allergies += "Gluten";
+                allergies += " " + "Gluten";
             }
-            else if(egg.IsChecked == true)
+            if(egg.IsChecked == true)
             {
-                allergies += "egg";
+                allergies +=  " " + "egg";
             }
-            else if( string.IsNullOrWhiteSpace(allergies))
+            if( string.IsNullOrWhiteSpace(allergies))
             {
                 allergies = "None";
             }
