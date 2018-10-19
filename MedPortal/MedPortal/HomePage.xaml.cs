@@ -24,5 +24,20 @@ namespace MedPortal
         {
             InitializeComponent();
         }
+
+        private void Appointment_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Appointment.xaml", UriKind.Relative));
+        }
+
+        private void Presciption_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Prescription.xaml", UriKind.Relative));
+        }
+
+        private void Billing_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Billing.xaml", UriKind.Relative));
+        }
     }
 }

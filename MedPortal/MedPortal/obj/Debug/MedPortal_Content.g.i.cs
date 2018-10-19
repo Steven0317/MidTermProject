@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("credit-card.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("home-vector.png")]
 
 
