@@ -47,21 +47,21 @@
         <Rectangle Fill="#FFF4F4F5" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Stretch" Grid.RowSpan="11" Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
 
 
-        <Button HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch"  Background="{x:Null}" Grid.RowSpan="1" BorderThickness="0" Click="Button_Click">
+        <Button HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch"  Background="{x:Null}" Grid.RowSpan="1" BorderThickness="0" Click="Button_Click" Style="{DynamicResource NoMouseOver}">
             <Image Source="home-vector.png" IsEnabled="False"  >
             </Image>
         </Button>
 
-        <Button x:Name="Appointment_Button" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch"  Background="{x:Null}"    BorderThickness="0"  Click="Appointment_Button_Click">
+        <Button x:Name="Appointment_Button" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch"  Background="{x:Null}"    BorderThickness="0"  Click="Appointment_Button_Click" Style="{DynamicResource NoMouseOver}">
             <Image  IsEnabled="False" Source="small-calendar.png">
             </Image>
         </Button>
 
-        <Button x:Name="Presciption_Button" HorizontalAlignment="Stretch" Grid.Column="2" VerticalAlignment="Stretch"  Background="{x:Null}"  BorderThickness="0" Click="Presciption_Button_Click" >
+        <Button x:Name="Presciption_Button" HorizontalAlignment="Stretch" Grid.Column="2" VerticalAlignment="Stretch"  Background="{x:Null}"  BorderThickness="0" Click="Presciption_Button_Click" Style="{DynamicResource NoMouseOver}">
             <Image IsEnabled="False" Source="drugs.png">
             </Image>
         </Button>
-        <Button x:Name="Billing_Button" HorizontalAlignment="Stretch" Grid.Column="3" VerticalAlignment="Top" Height="75" Background="{x:Null}" Grid.RowSpan="2" BorderThickness="0" Click="Billing_Button_Click">
+        <Button x:Name="Billing_Button" HorizontalAlignment="Stretch" Grid.Column="3" VerticalAlignment="Top" Height="75" Background="{x:Null}" Grid.RowSpan="2" BorderThickness="0" Click="Billing_Button_Click" Style="{DynamicResource NoMouseOver}">
             <Image IsEnabled="False" Source="credit-card.png" >
             </Image>
         </Button>

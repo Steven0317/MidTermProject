@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>patientportal_mTm_icon.ico</ApplicationIcon>
+    <ApplicationIcon>imageedit_2_5431577533_ocg_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -181,6 +181,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="imageedit_1_2882203914.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imageedit_2_5431577533_ocg_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
