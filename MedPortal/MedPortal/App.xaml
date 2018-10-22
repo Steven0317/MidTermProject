@@ -74,11 +74,21 @@
                 </Trigger>
 
             </ControlTemplate.Triggers>
-
-
         </ControlTemplate>
 
-        
+        <!--Diasables default mouse over-->
+        <Style x:Key="NoMouseOver" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
 
     </Application.Resources>

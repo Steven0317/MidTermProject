@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("home-vector.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imageedit_1_2882203914.png")]
 
 
