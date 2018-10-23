@@ -31,7 +31,7 @@ namespace MedPortal
         public HomePage()
         {
             InitializeComponent();
-            //Welcome.Text +=  " " + LoginPage.LoggedinUser.FirstName + "!";
+            Welcome.Text +=  ", " + LoginPage.LoggedinUser.FirstName;
 
             try
             {
