@@ -35,16 +35,14 @@
 
         </Grid.ColumnDefinitions>
 
-        <Grid.Resources>
-          
-        </Grid.Resources>
+       
 
         <Rectangle Fill="#FFF4F4F5" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" Grid.RowSpan="4" Width="375" Stroke="#FF1CADC2" VerticalAlignment="Stretch"  Grid.ColumnSpan="4" RadiusY="10" RadiusX="10"/>
         <TextBlock x:Name="error" Text="Incorrect password or username" FontSize="20"  Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" Visibility="Collapsed"  Foreground="Red" VerticalAlignment="Center" />
 
 
 
-        <TextBox x:Name="username"  Tag="Username: " FontWeight="DemiBold" TextAlignment="Center" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="275" VerticalAlignment="Center" Style="{StaticResource CW-Inline-TextBox}" />
+        <TextBox x:Name="username" Tag="Username: " FontWeight="DemiBold" TextAlignment="Center" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="275" VerticalAlignment="Center" Style="{StaticResource CW-Inline-TextBox}" />
         <PasswordBox x:Name="password" Tag="Password: " HorizontalContentAlignment="Center" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="275" VerticalAlignment="Top" Style="{StaticResource PW-Inline-TextBox}" />
 
 
