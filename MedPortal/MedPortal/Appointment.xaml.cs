@@ -43,5 +43,11 @@ namespace MedPortal
         {
             NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
         }
+
+        private void Logout_Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoginPage.LoggedinUser = null;
+            NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
+        }
     }
 }

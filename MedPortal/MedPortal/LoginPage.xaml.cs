@@ -28,6 +28,8 @@ namespace MedPortal
         
         XmlSerializer serializer = new XmlSerializer(typeof(List<Individual>));
         public static List<Individual> UserCollection = new List<Individual>();
+        public static Individual LoggedinUser;
+
         public LoginPage()
         {
             InitializeComponent();
@@ -43,15 +45,23 @@ namespace MedPortal
             }
         }
 
-
-
-
+       
         private void login_button_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(username.Text) && !string.IsNullOrWhiteSpace(password.Password))
             {
                 if (ValidateLogin())
                 {
+                    /* if validation is ture grab the users object
+                     * from the list and store it to reference within the 
+                     *  app and clear the users list afterwards
+                     */
+                    LoggedinUser = (from users in UserCollection
+                                   where users.user == username.Text
+                                   select users).SingleOrDefault();
+
+                    UserCollection.Clear();
+
                     NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
                 }
                 else

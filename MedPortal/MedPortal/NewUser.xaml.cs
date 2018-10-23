@@ -59,6 +59,10 @@ namespace MedPortal
                                                     UserAge, DOBBox.Text, allergies, SBox.Text, PCPBox.Text, IPBox.Text, salt);
                 LoginPage.UserCollection.Add(temp);
 
+                LoginPage.LoggedinUser = temp;
+
+                NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
+
                 string path = "users.xml";
 
                 if (LoginPage.UserCollection.Count == 0 && File.Exists(path))
@@ -101,7 +105,7 @@ namespace MedPortal
             DOBValid = string.IsNullOrWhiteSpace(DOBBox.Text) ? false : ValidateDigit(DOBBox.Text);
             Dob.Foreground = DOBValid ? Brushes.Black : Brushes.Coral;
 
-            uValid = string.IsNullOrWhiteSpace(UBox.Text) ? false : true;
+            uValid = string.IsNullOrWhiteSpace(UBox.Text) && uTool.Visibility == Visibility.Hidden ? false : true;
             UName.Foreground = uValid ? Brushes.Black : Brushes.Coral;
 
             pValid = string.IsNullOrWhiteSpace(PBox.Text)  || PBox.Text.Length < 8 ? false : true;
@@ -183,5 +187,16 @@ namespace MedPortal
             return allergies;
         }
 
+        private void UBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (LoginPage.UserCollection.Any(x => x.user == UBox.Text))
+            {
+                uTool.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                uTool.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }

@@ -185,5 +185,8 @@
   <ItemGroup>
     <Resource Include="imageedit_2_5431577533_ocg_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
