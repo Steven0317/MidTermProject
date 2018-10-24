@@ -46,17 +46,19 @@
 
         <Rectangle Grid.ColumnSpan="16" Fill="#FF1CADC2" HorizontalAlignment="Stretch" Grid.Row="0"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" RadiusX="5" RadiusY="5" />
         <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="18" Fill="WhiteSmoke" HorizontalAlignment="Stretch" Grid.Row="1"  Stroke="LightGray" VerticalAlignment="Stretch"  />
+        <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" Grid.RowSpan="5" Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
 
-        <DataGrid ItemsSource="{Binding userRX}" x:Name="RXGrid" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
+
+        <DataGrid ItemsSource="{Binding userRX}" x:Name="RXGrid" Grid.Row="5" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
                   Background="{x:Null}" RowBackground="LightGray" AlternatingRowBackground="LightBlue" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
                   CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserAddRows="False"
-                  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" >
+                  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" >
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Refill" IsReadOnly="False"/>
-                <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="250" IsReadOnly="True" />
-                <DataGridTextColumn Header="Fill Date" Binding="{Binding FillDate}" Width="250"  IsReadOnly="True"/>
-                <DataGridTextColumn Header="Experation Date" Binding="{Binding ExpirationDate}" Width=" 250" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Refills Remaining" Binding="{Binding RefillAvailable}" Width="250" IsReadOnly="True" />
+                <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="*" IsReadOnly="True" />
+                <DataGridTextColumn Header="Fill Date" Binding="{Binding FillDate}" Width="*"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="Experation Date" Binding="{Binding ExpirationDate}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Refills Remaining" Binding="{Binding RefillAvailable}" Width="*" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
 
