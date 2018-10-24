@@ -21,6 +21,7 @@ namespace MedPortal
         public string expiration;
         [XmlAttribute(DataType = "int")]
         public int refills;
+        public bool CheckedStatus = false;
 
 
         public RXinfo() { }
@@ -40,5 +41,6 @@ namespace MedPortal
         public string FillDate { get { return date; } set { value = date; } }
         public string ExpirationDate { get { return expiration; } set { value = expiration; } }
         public int RefillAvailable { get { return refills; } set { value = refills; } }
+        public bool IsChecked { get { return CheckedStatus; } set { value = CheckedStatus; } }
     }
 }

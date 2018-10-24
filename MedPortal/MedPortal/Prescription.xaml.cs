@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +22,22 @@ namespace MedPortal
     /// </summary>
     public partial class Prescription : Page
     {
+        ObservableCollection<RXinfo> userObsrv = new ObservableCollection<RXinfo>();
+        public List<RXinfo> userRX = new List<RXinfo>();
+
         public Prescription()
         {
             InitializeComponent();
 
-            List<RXinfo> userRX = new List<RXinfo>();
-            userRX = getLoggedInRX();
+            
+            userObsrv = getLoggedInRX();
 
-            if (userRX.Any())
+            
+            
+            
+            if (userObsrv.Any())
             {
-                RXGrid.ItemsSource = userRX; ;
+                RXGrid.ItemsSource = userObsrv;
             }
             else
             {
@@ -40,7 +48,7 @@ namespace MedPortal
         }
 
 
-        private List<RXinfo> getLoggedInRX()
+        private ObservableCollection<RXinfo> getLoggedInRX()
         {
             List<RXinfo> userRX = new List<RXinfo>();
 
@@ -48,7 +56,8 @@ namespace MedPortal
                       where user.social == LoginPage.LoggedinUser.social
                       select user).ToList();
 
-            return userRX;
+            ObservableCollection<RXinfo> temp = new ObservableCollection<RXinfo>(userRX);
+            return temp;
         }
 
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)
@@ -75,6 +84,20 @@ namespace MedPortal
         {
             LoginPage.LoggedinUser = null;
             NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
+        }
+
+        private void Refill_Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(var script in userObsrv)
+            {
+                if(script.CheckedStatus == true && script.refills > 0)
+                {
+                    script.refills = script.refills - 1 ;
+                    script.CheckedStatus = true;
+                    
+                }
+            }
+           
         }
     }
 }
