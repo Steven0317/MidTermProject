@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -37,12 +39,89 @@ namespace MedPortal
             {
                 ReadDocFromMemory("doctors.xml");
                 ReadRXFromMemory("rx.xml");
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine("--------Xml Read Error--------");
                 MessageBox.Show($"Unable to read xml file\ninner excepetion:{ex.InnerException.Message} ");
             }
+
+
+
+
+            List<DocBill> userDoc = new List<DocBill>();
+            userDoc = getLoggedInDocBill();
+
+            List<DocBill> userBill = new List<DocBill>();
+            userBill = getLoggedInBill();
+
+            List<RXinfo> userRX = new List<RXinfo>();
+            userRX = getLoggedInRX();
+
+            if (userDoc.Any())
+            {
+                AppointmentGrid.ItemsSource = userDoc;
+            }
+            else
+            {
+                AppointmentGrid.Visibility = Visibility.Hidden;
+                AppText.Visibility = Visibility.Visible;
+            }
+
+            if(userBill.Any())
+            {
+                BillGrid.ItemsSource = userBill;
+            }
+            else
+            {
+                BillGrid.Visibility = Visibility.Hidden;
+                BillText.Visibility = Visibility.Visible;
+            }
+
+            if (userRX.Any())
+            {
+                RXGrid.ItemsSource = userRX; ;
+            }
+            else
+            {
+                RXGrid.Visibility = Visibility.Hidden;
+                RXText.Visibility = Visibility.Visible;
+            }
+
+        }
+
+        private List<RXinfo> getLoggedInRX()
+        {
+            List<RXinfo> userRX = new List<RXinfo>();
+
+            userRX = (from user in RXCollection
+                           where user.social == LoginPage.LoggedinUser.social 
+                           select user).ToList();
+
+            return userRX;
+        }
+
+        private List<DocBill> getLoggedInBill()
+        {
+            List<DocBill> userDocBill = new List<DocBill>();
+
+            userDocBill = (from user in DocCollection
+                           where user.social == LoginPage.LoggedinUser.social && user.Bill != "N"
+                           select user).ToList();
+
+            return userDocBill;
+        }
+
+        private List<DocBill> getLoggedInDocBill()
+        {
+            List<DocBill> userBill = new List<DocBill>();
+
+            userBill = (from user in DocCollection
+                          where user.social == LoginPage.LoggedinUser.social
+                          select user).ToList();
+
+            return userBill;
         }
 
         private void ReadDocFromMemory(string path)

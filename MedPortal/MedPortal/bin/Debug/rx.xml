@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ArrayOfRXinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RXinfo social="812-12-0912" prescriptionName="Lozol" scriptNumber="9382398232" date="01/04/2018" expiration="01/04/2019" refills="3">
+  	<social>812-12-0912</social>
+  	<prescriptionName>Lozol</prescriptionName>
+  	<scriptNumber>9382398232</scriptNumber>
+  	<date>01/04/2018</date>
+  	<expiration>01/04/2019</expiration>
+  	<refills>3</refills>
+  </RXinfo>
+   <RXinfo social="812-12-0912" prescriptionName="Prozac" scriptNumber="11212435324" date="05/28/2017" expiration="05/31/2020" refills="18">
+  	<social>812-12-0912</social>
+  	<prescriptionName>Prozac</prescriptionName>
+  	<scriptNumber>11212435324</scriptNumber>
+  	<date>05/28/2017</date>
+  	<expiration>05/31/2020</expiration>
+  	<refills>18</refills>
+  </RXinfo>
+  <RXinfo social="503-38-1908" prescriptionName="Kevzara" scriptNumber="4739518341" date="09/26/2017" expiration="10/18/2018" refills="0">
+  	<social>503-38-1908</social>
+  	<prescriptionName>Kezvara</prescriptionName>
+  	<scriptNumber>4739518341</scriptNumber>
+  	<date>09/26/2017</date>
+  	<expiration>10/18/2018</expiration>
+  	<refills>0</refills>
+  </RXinfo>
+  <RXinfo social="503-38-1908" prescriptionName="Diuril" scriptNumber="47394710247" date="09/21/2018" expiration="09/21/2019" refills="11">
+  	<social>503-38-1908</social>
+  	<prescriptionName>Diuril</prescriptionName>
+  	<scriptNumber>47394710247</scriptNumber>
+  	<date>09/21/2018</date>
+  	<expiration>09/21/2019</expiration>
+  	<refills>11</refills>
+  </RXinfo>
+  <RXinfo social="503-38-1908" prescriptionName="Anafril" scriptNumber="47394710248" date="03/06/2013" expiration="12/15/2018" refills="2">
+  	<social>503-38-1908</social>
+  	<prescriptionName>Anafril</prescriptionName>
+  	<scriptNumber>47394710248</scriptNumber>
+  	<date>03/06/2013</date>
+  	<expiration>12/15/2018</expiration>
+  	<refills>2</refills>
+  </RXinfo>
+</ArrayOfRXinfo>

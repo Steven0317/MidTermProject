@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfDocBill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DocBill social="812-12-0912" office="Dr.Bailey" time="9:15" location="Watson Clinic South" bill="N" price="0"
+  	paid="Y" left="0" invoice="X421234-539">
+  	<social>812-12-0912</social>
+  	<office>Dr. Bailey</office>
+  	<time>9:15</time>
+  	<location>Watson Clinic South</location>
+  	<bill>N</bill>
+  	<price>0</price>
+  	<paid>Y</paid>
+  	<left>0</left>
+  	<invoice>X421234-539</invoice>
+  </DocBill>
+  <DocBill social="503-38-1908" office="Dr.Miley" time="11:45" location="Easty Bay Medical" bill="Y" price="125.75"
+  	paid="N" left="49.54" invoice="A294628-721">
+  	<social>812-12-0912</social>
+  	<office>Dr. Bailey</office>
+  	<time>9:15</time>
+  	<location>East Bay Medical</location>
+  	<bill>Y</bill>
+  	<price>125.75</price>
+  	<paid>N</paid>
+  	<left>49.54</left>
+  	<invoice>A294628-721</invoice>
+  </DocBill>
+</ArrayOfDocBill>
