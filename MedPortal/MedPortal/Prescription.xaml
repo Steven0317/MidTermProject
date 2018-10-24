@@ -47,6 +47,21 @@
         <Rectangle Grid.ColumnSpan="16" Fill="#FF1CADC2" HorizontalAlignment="Stretch" Grid.Row="0"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" RadiusX="5" RadiusY="5" />
         <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="18" Fill="WhiteSmoke" HorizontalAlignment="Stretch" Grid.Row="1"  Stroke="LightGray" VerticalAlignment="Stretch"  />
 
+        <DataGrid ItemsSource="{Binding userRX}" x:Name="RXGrid" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
+                  Background="{x:Null}" RowBackground="LightGray" AlternatingRowBackground="LightBlue" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
+                  CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserAddRows="False"
+                  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Refill" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="250" IsReadOnly="True" />
+                <DataGridTextColumn Header="Fill Date" Binding="{Binding FillDate}" Width="250"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="Experation Date" Binding="{Binding ExpirationDate}" Width=" 250" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Refills Remaining" Binding="{Binding RefillAvailable}" Width="250" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+
         <!-- Header Buttons-->
 
         <Button HorizontalAlignment="Stretch" Grid.Row="1" Click="Button_Click" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch"  Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">

@@ -23,7 +23,34 @@ namespace MedPortal
         public Prescription()
         {
             InitializeComponent();
+
+            List<RXinfo> userRX = new List<RXinfo>();
+            userRX = getLoggedInRX();
+
+            if (userRX.Any())
+            {
+                RXGrid.ItemsSource = userRX; ;
+            }
+            else
+            {
+                RXGrid.Visibility = Visibility.Hidden;
+                RXText.Visibility = Visibility.Visible;
+            }
+
         }
+
+
+        private List<RXinfo> getLoggedInRX()
+        {
+            List<RXinfo> userRX = new List<RXinfo>();
+
+            userRX = (from user in HomePage.RXCollection
+                      where user.social == LoginPage.LoggedinUser.social
+                      select user).ToList();
+
+            return userRX;
+        }
+
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("Appointment.xaml", UriKind.Relative));
