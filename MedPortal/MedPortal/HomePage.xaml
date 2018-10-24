@@ -71,7 +71,7 @@
                   CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" 
                   HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Doctor" Binding="{Binding Office}" Width="*" />
+                <DataGridTextColumn Header="Provider" Binding="{Binding Office}" Width="*" />
                 <DataGridTextColumn Header="Location" Binding="{Binding Location}" Width=" *" />
                 <DataGridTextColumn Header="Time"   Binding="{Binding Time}" Width="*" />
             </DataGrid.Columns>
@@ -85,7 +85,7 @@
         <DataGrid.Columns>
             <DataGridTextColumn Header="Invoice Number" Binding="{Binding Invoice}" Width="*" />
             <DataGridTextColumn Header="Total" Binding="{Binding PriceOfBill}" Width="*" />
-            <DataGridTextColumn Header="Remaining balance" Binding="{Binding LeftToPay}" Width="*" />
+            <DataGridTextColumn Header="Remaining Balance" Binding="{Binding LeftToPay}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
 
@@ -97,7 +97,7 @@
                 <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="*" />
                 <DataGridTextColumn Header="Fill Date" Binding="{Binding FillDate}" Width="*" />
                 <DataGridTextColumn Header="Experation Date" Binding="{Binding ExpirationDate}" Width="*" />
-                <DataGridTextColumn Header="Refills Remaining" Binding="{Binding RefillAvailable}" Width="*" />
+                
             </DataGrid.Columns>
         </DataGrid>
 
