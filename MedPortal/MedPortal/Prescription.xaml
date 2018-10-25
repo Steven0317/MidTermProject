@@ -57,7 +57,7 @@
                   CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserAddRows="False"
                   HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" >
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn x:Name="isCheck" Binding="{Binding IsChecked}" Header="Refill" IsReadOnly="False"/>
+                <DataGridCheckBoxColumn x:Name="isCheck" Binding="{Binding IsChecked}"  Header="Refill" IsReadOnly="False"/>
                 <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="*" IsReadOnly="True" />
                 <DataGridTextColumn Header="Fill Date" Binding="{Binding FillDate}" Width="*"  IsReadOnly="True"/>
                 <DataGridTextColumn Header="Experation Date" Binding="{Binding ExpirationDate}" Width="*" IsReadOnly="True"/>

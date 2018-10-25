@@ -88,15 +88,7 @@ namespace MedPortal
 
         private void Refill_Button_Click(object sender, RoutedEventArgs e)
         {
-            foreach(var script in userObsrv)
-            {
-                if(script.CheckedStatus == true && script.refills > 0)
-                {
-                    script.refills = script.refills - 1 ;
-                    script.CheckedStatus = true;
-                    
-                }
-            }
+            IEnumerable<RXinfo> selectedScripts = RXGrid.Items.OfType<RXinfo>().Where();
            
         }
     }
