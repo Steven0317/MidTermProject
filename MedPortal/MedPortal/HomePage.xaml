@@ -105,7 +105,7 @@
         <!-- Textblocks for non filled glances-->
         <TextBlock x:Name="AppText" Text="no upcoming appointments" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
         <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="14" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
-        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="14" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
 
         <!-- Header Buttons-->
 

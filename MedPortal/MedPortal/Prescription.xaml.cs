@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace MedPortal
 {
@@ -24,17 +27,17 @@ namespace MedPortal
     {
         ObservableCollection<RXinfo> userObsrv = new ObservableCollection<RXinfo>();
         public List<RXinfo> userRX = new List<RXinfo>();
+        XmlSerializer serializer = new XmlSerializer(typeof(List<RXinfo>));
+
 
         public Prescription()
         {
             InitializeComponent();
 
-            
+
             userObsrv = getLoggedInRX();
 
-            
-            
-            
+
             if (userObsrv.Any())
             {
                 RXGrid.ItemsSource = userObsrv;
@@ -88,8 +91,52 @@ namespace MedPortal
 
         private void Refill_Button_Click(object sender, RoutedEventArgs e)
         {
-            IEnumerable<RXinfo> selectedScripts = RXGrid.Items.OfType<RXinfo>().Where();
-           
+
+            if ((RXinfo)RXGrid.SelectedItem != null)
+            {
+                RXinfo row = (RXinfo)RXGrid.SelectedItem;
+
+                if (row.refills < 1)
+                {
+                    MessageBox.Show("No more refills available for that prescription");
+                }
+                else
+                {
+                    foreach (RXinfo script in HomePage.RXCollection)
+                    {
+                        if (script.scriptNumber == row.scriptNumber)
+                        {
+                            script.refills = script.refills - 1;
+                        }
+                    }
+                    try
+                    {
+                        WriteToMemory("rx.xml");
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show($"xml write error/nInner exception{ex.InnerException.Message}");
+                    }
+                }
+            }
+
+
+        }
+
+        private void WriteToMemory(string path)
+        {
+            if (HomePage.RXCollection.Count == 0 && File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            else
+            {
+                using (FileStream filestream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    serializer.Serialize(filestream, HomePage.RXCollection);
+                }
+
+            }
         }
     }
 }
