@@ -45,6 +45,8 @@
             <Rectangle Fill="#FF1CADC2" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"   Stroke="#FF1CADC2" VerticalAlignment="Top" Height="30"  Grid.ColumnSpan="3" RadiusY="1" RadiusX="10" />
             <Rectangle Fill="#FFF4F4F5" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Grid.RowSpan="15"  Stroke="#FF1CADC2" VerticalAlignment="Stretch"  Width="425"  Grid.ColumnSpan="3" RadiusY="10" RadiusX="10" Margin="179,0"/>
 
+            
+            
             <TextBlock Text="     Account Creation" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF4F4F5" FontSize="18" Height="24" Width="171"/>
 
             <TextBlock Text="Personal Information" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="18" Margin="1,0,80,0" Grid.Column="1" Height="24" Width="180" />
@@ -97,6 +99,7 @@
             <CheckBox x:Name="egg" Grid.Row="13" Grid.Column="1" Content="Eggs" FontWeight="DemiBold" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="46" Margin="181,42,34,0" Grid.RowSpan="2"  />
 
             <Button x:Name="create_account_button" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="260" Grid.Row="14" Grid.Column="1" Height="25" Grid.ColumnSpan="1" Click="create_account_button_Click" Content="Create Account" Foreground="White"  Template="{DynamicResource buttonborder}" Background="#FF32C8FF" OpacityMask="#FF32C8FF"  />
+            <Button x:Name="back_button" VerticalAlignment="Center" HorizontalAlignment="Center" Width="260" Grid.Row="15" Grid.Column="1" Height="25" Grid.ColumnSpan="1" Click="back_button_Click" Content="Back" Foreground="White"  Template="{DynamicResource buttonborder}" Background="#FF32C8FF" OpacityMask="#FF32C8FF"  />
         </Grid>
     </ScrollViewer>
 </Page>
