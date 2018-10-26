@@ -198,10 +198,5 @@ namespace MedPortal
                 uTool.Visibility = Visibility.Hidden;
             }
         }
-
-        private void back_button_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
-        }
     }
 }
