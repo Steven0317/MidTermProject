@@ -51,7 +51,9 @@
         <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Stretch" Grid.RowSpan="4"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
         <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="7" HorizontalAlignment="Stretch" Grid.RowSpan="4"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
         <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="12" HorizontalAlignment="Stretch" Grid.RowSpan="4"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
-        
+
+        <Image Grid.Column="6" Source="imageedit_1_2882203914.png" Grid.ColumnSpan="2"  />
+
         <TextBlock x:Name="Welcome" Grid.Row="0"  Grid.Column="0" Text="Welcome"  FontSize="18" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
         
 
@@ -105,7 +107,7 @@
         <!-- Textblocks for non filled glances-->
         <TextBlock x:Name="AppText" Text="no upcoming appointments" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
         <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="14" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
-        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="14" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
 
         <!-- Header Buttons-->
 

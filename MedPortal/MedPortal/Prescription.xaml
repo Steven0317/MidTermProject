@@ -49,15 +49,17 @@
         <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" Grid.RowSpan="6" Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
 
         <TextBlock  Text="Current Medication" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock Text="select the checkbox for the prescription that you want to refill. It may take up to 24 hours for your refill request to process" TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Justify" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-       
+        <TextBlock Text="select the prescription that you want to refill from the list below" TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="5" TextAlignment="Justify" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Image Grid.Column="6" Source="imageedit_1_2882203914.png"  Grid.ColumnSpan="2" />
+
         <!-- DataGrid and Header TextBlocks-->
         <DataGrid ItemsSource="{Binding userRX}" x:Name="RXGrid" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
                   Background="{x:Null}" RowBackground="LightGray" AlternatingRowBackground="LightBlue" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
                   CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserAddRows="False"
                   HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" >
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn x:Name="isCheck" Binding="{Binding IsChecked}"  Header="Refill" IsReadOnly="False"/>
+                <DataGridTextColumn Binding="{Binding ScriptNumber}" Width="*"  Header="Presciption Number" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="*" IsReadOnly="True" />
                 <DataGridTextColumn Header="Fill Date" Binding="{Binding FillDate}" Width="*"  IsReadOnly="True"/>
                 <DataGridTextColumn Header="Experation Date" Binding="{Binding ExpirationDate}" Width="*" IsReadOnly="True"/>
@@ -65,9 +67,9 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
 
-        <Button x:Name="Refill_Button" Content="Refill Request" Grid.Row="9" Grid.Column="9" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Refill_Button_Click"  />
+        <Button x:Name="Refill_Button" Foreground="White" Content="Refill Request" Grid.Row="9" Grid.Column="9" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Refill_Button_Click"  />
         <!-- Header Buttons-->
 
         <Button HorizontalAlignment="Stretch" Grid.Row="1" Click="Button_Click" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch"  Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">
