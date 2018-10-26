@@ -88,7 +88,7 @@ namespace MedPortal
 
         private void Refill_Button_Click(object sender, RoutedEventArgs e)
         {
-            IEnumerable<RXinfo> selectedScripts = RXGrid.Items.OfType<RXinfo>().Where();
+            IEnumerable<RXinfo> selectedScripts = RXGrid.Items.OfType<RXinfo>();
            
         }
     }

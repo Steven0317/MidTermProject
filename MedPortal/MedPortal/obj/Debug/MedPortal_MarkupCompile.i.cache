@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\
+C:\Users\ComputerOne\source\repos\MidTermProject\MidTermProject\MedPortal\MedPortal\obj\Debug\
 MedPortal
 none
 false
 DEBUG;TRACE
-C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\App.xaml
-7-384645249
+C:\Users\ComputerOne\source\repos\MidTermProject\MidTermProject\MedPortal\MedPortal\App.xaml
+8-1977859384
 
-19-1699879213
-19-1777743434
-Appointment.xaml;Billing.xaml;HomePage.xaml;LoginPage.xaml;MainWindow.xaml;NewUser.xaml;Prescription.xaml;
+25-1355020729
+19-1667250088
+Appointment.xaml;Billing.xaml;HomePage.xaml;LoginPage.xaml;MainWindow.xaml;NewUser.xaml;Prescription.xaml;ScheduleAppointment.xaml;
 
-False
+True
 

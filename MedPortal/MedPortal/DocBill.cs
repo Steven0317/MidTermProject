@@ -42,6 +42,24 @@ namespace MedPortal
             this.invoice = invoice;
         }
 
+        public DocBill(string social, string office, string time, string location)
+        {
+            this.social = social;
+            this.office = office;
+            this.time = time;
+            this.location = location;
+        }
+
+        public DocBill(string social, string bill, double price, string paid, double left, string invoice)
+        {
+            this.social = social;
+            this.bill = bill;
+            this.price = price;
+            this.paid = paid;
+            this.left = left;
+            this.invoice = invoice;
+        }
+
         public string SSN { get { return social; } set { value = social; } }
         public string Office { get { return office; } set { value = office; } }
         public string Time { get { return time; } set { value = time; } }

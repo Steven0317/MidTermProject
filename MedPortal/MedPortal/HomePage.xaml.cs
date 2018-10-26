@@ -29,6 +29,7 @@ namespace MedPortal
         XmlSerializer RXserializer = new XmlSerializer(typeof(List<RXinfo>));
         public static List<DocBill> DocCollection = new List<DocBill>();
         public static List<RXinfo> RXCollection = new List<RXinfo>();
+        public static List<Doc> Doctors = new List<Doc>();
 
         public HomePage()
         {
@@ -69,16 +70,18 @@ namespace MedPortal
                 AppText.Visibility = Visibility.Visible;
             }
 
-            if(userBill.Any())
+            for (int i = 0; i < userBill.Count; i++)
             {
-                BillGrid.ItemsSource = userBill;
+                if (userBill[i].PriceOfBill != 0)
+                {
+                    BillGrid.ItemsSource = userBill;
+                }
+                if (!userDoc.Any())
+                {
+                    BillGrid.Visibility = Visibility.Hidden;
+                    BillText.Visibility = Visibility.Visible;
+                }
             }
-            else
-            {
-                BillGrid.Visibility = Visibility.Hidden;
-                BillText.Visibility = Visibility.Visible;
-            }
-
             if (userRX.Any())
             {
                 RXGrid.ItemsSource = userRX; ;
@@ -88,6 +91,23 @@ namespace MedPortal
                 RXGrid.Visibility = Visibility.Hidden;
                 RXText.Visibility = Visibility.Visible;
             }
+
+            Doctors.Add(new Doc("Watson Clinic South", "Dr. Bailey"));
+            Doctors.Add(new Doc("Watson Clinic South", "Dr. Danum"));
+            Doctors.Add(new Doc("Watson Clinic South", "Dr. Trent"));
+            Doctors.Add(new Doc("Watson Clinic South", "Dr. Xavier"));
+            Doctors.Add(new Doc("East Bay Clinic", "Dr. Adams"));
+            Doctors.Add(new Doc("East Bay Clinic", "Dr. Grange"));
+            Doctors.Add(new Doc("East Bay Clinic", "Dr. Miley"));
+            Doctors.Add(new Doc("East Bay Clinic", "Dr. Poetl"));
+            Doctors.Add(new Doc("Tampa General Hospital", "Dr. Carmen"));
+            Doctors.Add(new Doc("Tampa General Hospital", "Dr. Hurtak"));
+            Doctors.Add(new Doc("Tampa General Hospital", "Dr. Iguodola"));
+            Doctors.Add(new Doc("Tampa General Hospital", "Dr. Ransel"));
+            Doctors.Add(new Doc("South Shore Regional", "Dr. Bogaerts"));
+            Doctors.Add(new Doc("South Shore Regional", "Dr. Mallov"));
+            Doctors.Add(new Doc("South Shore Regional", "Dr. Martinez"));
+            Doctors.Add(new Doc("South Shore Regional", "Dr. Swihart"));
 
         }
 

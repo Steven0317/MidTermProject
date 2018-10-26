@@ -1,27 +1,33 @@
 <?xml version="1.0"?>
 <ArrayOfDocBill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <DocBill social="812-12-0912" office="Dr.Bailey" time="9:15" location="Watson Clinic South" bill="N" price="0"
-  	paid="Y" left="0" invoice="X421234-539">
-  	<social>812-12-0912</social>
-  	<office>Dr. Bailey</office>
-  	<time>9:15</time>
-  	<location>Watson Clinic South</location>
-  	<bill>N</bill>
-  	<price>0</price>
-  	<paid>Y</paid>
-  	<left>0</left>
-  	<invoice>X421234-539</invoice>
+  <DocBill social="812-12-0912" office="Dr.Bailey" time="9:15" location="Watson Clinic South" bill="N" price="0" paid="Y" left="0" invoice="X421234-539">
+    <SSN>812-12-0912</SSN>
+    <Office>Dr.Bailey</Office>
+    <Time>9:15</Time>
+    <Location>Watson Clinic South</Location>
+    <Bill>N</Bill>
+    <PriceOfBill>0</PriceOfBill>
+    <IsBillPaid>Y</IsBillPaid>
+    <LeftToPay>0</LeftToPay>
+    <Invoice>X421234-539</Invoice>
   </DocBill>
-  <DocBill social="503-38-1908" office="Dr.Miley" time="11:45" location="Easty Bay Medical" bill="Y" price="125.75"
-  	paid="N" left="49.54" invoice="A294628-721">
-  	<social>812-12-0912</social>
-  	<office>Dr. Bailey</office>
-  	<time>9:15</time>
-  	<location>East Bay Medical</location>
-  	<bill>Y</bill>
-  	<price>125.75</price>
-  	<paid>N</paid>
-  	<left>49.54</left>
-  	<invoice>A294628-721</invoice>
+  <DocBill social="503-38-1908" office="Dr.Miley" time="11:45" location="Easty Bay Medical" bill="Y" price="125.75" paid="N" left="49.54" invoice="A294628-721">
+    <SSN>503-38-1908</SSN>
+    <Office>Dr.Miley</Office>
+    <Time>11:45</Time>
+    <Location>Easty Bay Medical</Location>
+    <Bill>Y</Bill>
+    <PriceOfBill>125.75</PriceOfBill>
+    <IsBillPaid>N</IsBillPaid>
+    <LeftToPay>49.54</LeftToPay>
+    <Invoice>A294628-721</Invoice>
+  </DocBill>
+  <DocBill social="503-38-1908" office="Dr. Trent" time="10:30 AM" location="Watson Clinic South" price="0" left="0">
+    <SSN>503-38-1908</SSN>
+    <Office>Dr. Trent</Office>
+    <Time>10:30 AM</Time>
+    <Location>Watson Clinic South</Location>
+    <PriceOfBill>0</PriceOfBill>
+    <LeftToPay>0</LeftToPay>
   </DocBill>
 </ArrayOfDocBill>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,36 @@ namespace MedPortal
     /// </summary>
     public partial class Appointment : Page
     {
+        ObservableCollection<DocBill> userObsrv = new ObservableCollection<DocBill>();
         public Appointment()
         {
             InitializeComponent();
+
+            userObsrv = getLoggedInDoc();
+
+
+
+
+            if (userObsrv.Any())
+            {
+                DocGrid.ItemsSource = userObsrv;
+            }
+            else
+            {
+                DocGrid.Visibility = Visibility.Hidden;
+                DocText.Visibility = Visibility.Visible;
+            }
+        }
+        private ObservableCollection<DocBill> getLoggedInDoc()
+        {
+            List<DocBill> userDoc = new List<DocBill>();
+
+            userDoc = (from user in HomePage.DocCollection
+                      where user.social == LoginPage.LoggedinUser.social
+                      select user).ToList();
+
+            ObservableCollection<DocBill> temp = new ObservableCollection<DocBill>(userDoc);
+            return temp;
         }
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -48,6 +76,11 @@ namespace MedPortal
         {
             LoginPage.LoggedinUser = null;
             NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
+        }
+
+        private void Schedule_ButtonClick (object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("ScheduleAppointment.xaml", UriKind.Relative));
         }
     }
 }

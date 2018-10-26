@@ -52,4 +52,17 @@
     <IP>Aetna</IP>
     <Salt>sgsBY8+T975hkdCEZBFUm5hGKOGoQXTaypvHJ7630lI=</Salt>
   </Individual>
+  <Individual first="Kyle" last="Peters" user="kylepeters1023" pass="PfBL+rCSZt2BOymd9ltw1wRedA7VRTST31ppL7C64SA=" age="22" dob="10/23/1996" allergies=" Nuts" social="594-63-4279" pcp="Dr. Friend" insuranceProvider="Blue Cross/Blue Shield" salt="BbRlqwD1yPdn9fSa9oTwzZPmX6d6mEXyytcQ9bFv2CY=">
+    <FirstName>Kyle</FirstName>
+    <LastName>Peters</LastName>
+    <Username>kylepeters1023</Username>
+    <Password>PfBL+rCSZt2BOymd9ltw1wRedA7VRTST31ppL7C64SA=</Password>
+    <Age>22</Age>
+    <DOB>10/23/1996</DOB>
+    <Allergies> Nuts</Allergies>
+    <SSN>594-63-4279</SSN>
+    <PCP>Dr. Friend</PCP>
+    <IP>Blue Cross/Blue Shield</IP>
+    <Salt>BbRlqwD1yPdn9fSa9oTwzZPmX6d6mEXyytcQ9bFv2CY=</Salt>
+  </Individual>
 </ArrayOfIndividual>
