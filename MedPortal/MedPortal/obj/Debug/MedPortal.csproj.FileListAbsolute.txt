@@ -135,3 +135,5 @@ C:\Users\ComputerOne\source\repos\MidTermProject\MidTermProject\MedPortal\MedPor
 C:\Users\ComputerOne\source\repos\MidTermProject\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.exe
 C:\Users\ComputerOne\source\repos\MidTermProject\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.pdb
 C:\Users\ComputerOne\source\repos\MidTermProject\MidTermProject\MedPortal\MedPortal\obj\Debug\MedPortal.csprojAssemblyReference.cache
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\ScheduleAppointment.g.cs
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\ScheduleAppointment.baml

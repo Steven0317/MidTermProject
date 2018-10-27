@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace MedPortal
 {
@@ -22,6 +24,7 @@ namespace MedPortal
     /// </summary>
     public partial class Prescription : Page
     {
+        XmlSerializer serializer = new XmlSerializer(typeof(List<RXinfo>));
         ObservableCollection<RXinfo> userObsrv = new ObservableCollection<RXinfo>();
         public List<RXinfo> userRX = new List<RXinfo>();
 
@@ -88,7 +91,42 @@ namespace MedPortal
 
         private void Refill_Button_Click(object sender, RoutedEventArgs e)
         {
-            IEnumerable<RXinfo> selectedScripts = RXGrid.Items.OfType<RXinfo>();
+            if(RXGrid.SelectedItem != null)
+            {
+                RXinfo temp = (RXinfo)(RXGrid.SelectedItem);
+
+                if (temp.refills == 0)
+                {
+                    MessageBox.Show("No more refills available");
+                }
+                else
+                {
+                    foreach (RXinfo script in HomePage.RXCollection)
+                    {
+                        if (script.scriptNumber == temp.scriptNumber)
+                        {
+                            script.refills--;
+                        }
+                    }
+
+
+                    if (HomePage.RXCollection.Count == 0 && File.Exists("rx.xml"))
+                    {
+                        File.Delete("rx.xml");
+                    }
+                    else
+                    {
+                        using (FileStream filestream = new FileStream("rx.xml", FileMode.Create, FileAccess.ReadWrite))
+                        {
+                            serializer.Serialize(filestream, HomePage.RXCollection);
+                        }
+
+                    }
+
+                }
+                
+            }
+
            
         }
     }

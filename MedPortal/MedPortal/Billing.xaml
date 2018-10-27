@@ -62,7 +62,7 @@
                 </Style>
             </DataGrid.ItemContainerStyle>
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn x:Name="Check" Binding="{Binding IsChecked}"  Header="Pay" IsReadOnly="False"/>
+                
                 <DataGridTextColumn Header="Invoice Number" Binding="{Binding Invoice}" Width="*" />
                 <DataGridTextColumn Header="Total" Binding="{Binding PriceOfBill}" Width="*" />
                 <DataGridTextColumn x:Name="paid" Header="Remaining Balance" Binding="{Binding LeftToPay}" Width="*" />
@@ -73,8 +73,8 @@
         
         <TextBlock Text="Enter Amount to pay" TextWrapping="WrapWithOverflow" Grid.Row="9" Grid.Column="7" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Text="Amount Left To Pay" TextWrapping="WrapWithOverflow" Grid.Row="9" Grid.Column="5" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox x:Name="LeftBox"  TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150"  Grid.Row="9" Grid.Column="6" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Visibility="Hidden"/>
-        <TextBox x:Name="PayBox"  TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150"  Grid.Row="9" Grid.Column="8" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Visibility="Hidden"/>
+        <TextBox x:Name="LeftBox"  TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150"  Grid.Row="9" Grid.Column="6" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="PayBox"  TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150"  Grid.Row="9" Grid.Column="8" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20"/>
         <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Pay_Click"/>
 
         <!-- Header Buttons-->

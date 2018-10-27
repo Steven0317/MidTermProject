@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace MedPortal
 {
@@ -21,15 +23,18 @@ namespace MedPortal
     /// </summary>
     public partial class Billing : Page
     {
-        
+
+        XmlSerializer serializer = new XmlSerializer(typeof(List<DocBill>));
+        public List<DocBill> userBill = new List<DocBill>();
+        public List<DocBill> userDoc = new List<DocBill>();
         public Billing()
         {
             InitializeComponent();
 
-            List<DocBill> userBill = new List<DocBill>();
+           
             userBill = getLoggedInBill();
 
-            List<DocBill> userDoc = new List<DocBill>();
+            ;
             userDoc = getLoggedInDocBill();
 
             var item = BillGrid.SelectedItem;
@@ -117,23 +122,50 @@ namespace MedPortal
                 temp[0].LeftToPay = temp[0].LeftToPay - double.Parse(PayBox.Text);
 
             }
-            
+
 
         }
 
-       
+
 
         private void Pay_Click(object sender, RoutedEventArgs e)
         {
-            ObservableCollection<DocBill> temp = new ObservableCollection<DocBill>();
-            int index = BillGrid.SelectedIndex;
-            DocBill item = (DocBill)BillGrid.SelectedItems[index];
-            double left;
-            temp.Add(item);
-            left = temp[0].LeftToPay - double.Parse(PayBox.Text);
-            temp[0].LeftToPay = left;
-            
-            
+
+            //ObservableCollection<DocBill> temp = new ObservableCollection<DocBill>();
+            //int index = BillGrid.SelectedIndex;
+            //DocBill item = (DocBill)BillGrid.SelectedItems[index];
+
+
+            foreach (DocBill bill in HomePage.DocCollection)
+            {
+                if (bill.social == LoginPage.LoggedinUser.social)
+                {
+                   foreach(DocBill user in userBill)
+                    {
+                        if(bill.left == user.left)
+                        {
+                            bill.left = bill.left - Convert.ToDouble(PayBox.Text);
+                        }
+                    }
+
+                    
+                }
+            }
+
+            if (HomePage.DocCollection.Count == 0 && File.Exists("doctors.xml"))
+            {
+                File.Delete("doctors.xml");
+            }
+            else
+            {
+                using (FileStream filestream = new FileStream("doctors.xml", FileMode.Create, FileAccess.ReadWrite))
+                {
+                    serializer.Serialize(filestream, HomePage.DocCollection);
+                }
+
+            }
+
+
         }
     }
 }

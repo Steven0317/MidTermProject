@@ -11,7 +11,7 @@
     <LeftToPay>0</LeftToPay>
     <Invoice>X421234-539</Invoice>
   </DocBill>
-  <DocBill social="503-38-1908" office="Dr.Miley" time="11:45" location="Easty Bay Medical" bill="Y" price="125.75" paid="N" left="49.54" invoice="A294628-721">
+  <DocBill social="503-38-1908" office="Dr.Miley" time="11:45" location="Easty Bay Medical" bill="Y" price="125.75" paid="N" left="48.53" invoice="A294628-721">
     <SSN>503-38-1908</SSN>
     <Office>Dr.Miley</Office>
     <Time>11:45</Time>
@@ -19,15 +19,7 @@
     <Bill>Y</Bill>
     <PriceOfBill>125.75</PriceOfBill>
     <IsBillPaid>N</IsBillPaid>
-    <LeftToPay>49.54</LeftToPay>
+    <LeftToPay>48.53</LeftToPay>
     <Invoice>A294628-721</Invoice>
-  </DocBill>
-  <DocBill social="503-38-1908" office="Dr. Trent" time="10:30 AM" location="Watson Clinic South" price="0" left="0">
-    <SSN>503-38-1908</SSN>
-    <Office>Dr. Trent</Office>
-    <Time>10:30 AM</Time>
-    <Location>Watson Clinic South</Location>
-    <PriceOfBill>0</PriceOfBill>
-    <LeftToPay>0</LeftToPay>
   </DocBill>
 </ArrayOfDocBill>
