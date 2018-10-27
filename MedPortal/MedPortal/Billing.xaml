@@ -46,7 +46,36 @@
 
         <Rectangle Grid.ColumnSpan="16" Fill="#FF1CADC2" HorizontalAlignment="Stretch" Grid.Row="0"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" RadiusX="5" RadiusY="5" />
         <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="18" Fill="WhiteSmoke" HorizontalAlignment="Stretch" Grid.Row="1"  Stroke="LightGray" VerticalAlignment="Stretch"  />
-        <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" Grid.RowSpan="11" Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
+        <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" Grid.RowSpan="7" Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
+
+        <TextBlock  Text="Current Bills" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Here you can view and pay your bills" TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+
+        <DataGrid ItemsSource="{Binding userBill}" x:Name="BillGrid" Padding="0,5,0,0" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
+                  Background="{x:Null}" RowBackground="LightBlue" AlternatingRowBackground="LightGray" IsReadOnly="True" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
+                  CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" 
+                  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" >
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn x:Name="Check" Binding="{Binding IsChecked}"  Header="Pay" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Invoice Number" Binding="{Binding Invoice}" Width="*" />
+                <DataGridTextColumn Header="Total" Binding="{Binding PriceOfBill}" Width="*" />
+                <DataGridTextColumn x:Name="paid" Header="Remaining Balance" Binding="{Binding LeftToPay}" Width="*" />
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <TextBlock Text="Enter Amount to pay" TextWrapping="WrapWithOverflow" Grid.Row="9" Grid.Column="7" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Amount Left To Pay" TextWrapping="WrapWithOverflow" Grid.Row="9" Grid.Column="5" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="LeftBox"  TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150"  Grid.Row="9" Grid.Column="6" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Visibility="Hidden"/>
+        <TextBox x:Name="PayBox"  TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150"  Grid.Row="9" Grid.Column="8" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Visibility="Hidden"/>
+        <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Pay_Click"/>
 
         <!-- Header Buttons-->
 

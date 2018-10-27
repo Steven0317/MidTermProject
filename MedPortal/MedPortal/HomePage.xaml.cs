@@ -72,7 +72,7 @@ namespace MedPortal
 
             for (int i = 0; i < userBill.Count; i++)
             {
-                if (userBill[i].PriceOfBill != 0)
+                if (userBill[i].Bill == "Y")
                 {
                     BillGrid.ItemsSource = userBill;
                 }
