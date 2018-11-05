@@ -81,6 +81,9 @@
     <Compile Include="Billing.xaml.cs">
       <DependentUpon>Billing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BillingInfo.xaml.cs">
+      <DependentUpon>BillingInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Doc.cs" />
     <Compile Include="EBC.cs" />
     <Compile Include="HomePage.xaml.cs">
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Billing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BillingInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

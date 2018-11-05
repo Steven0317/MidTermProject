@@ -1,4 +1,4 @@
-﻿<Page x:Class="MedPortal.Billing"
+﻿<Page x:Class="MedPortal.BillingInfo"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:MedPortal"
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="2000"
-      Title="Billing">
+      Title="BillingInfo">
 
     <Grid Background="LightGray">
         <Grid.RowDefinitions>
@@ -58,11 +58,11 @@
                   HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" >
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
-                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                    
                 </Style>
             </DataGrid.ItemContainerStyle>
             <DataGrid.Columns>
-                
+
                 <DataGridTextColumn Header="Invoice Number" Binding="{Binding Invoice}" Width="*" />
                 <DataGridTextColumn Header="Total" Binding="{Binding PriceOfBill}" Width="*" />
                 <DataGridTextColumn x:Name="paid" Header="Remaining Balance" Binding="{Binding LeftToPay}" Width="*" />
@@ -70,12 +70,12 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        
+
         <TextBlock Text="Enter Amount to pay" TextWrapping="WrapWithOverflow" Grid.Row="9" Grid.Column="7" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         
         
         <TextBox x:Name="PayBox"  TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150"  Grid.Row="9" Grid.Column="8" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20"/>
-        <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9"  Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Pay_Click"/>
+        <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9"  Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}"/>
 
         <!-- Header Buttons-->
 
@@ -149,3 +149,4 @@
         </Button>
     </Grid>
 </Page>
+

@@ -51,6 +51,7 @@
 
         <TextBlock  Text="Current Appointments" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBlock Text="Here you can view your appointment(s), cancel an appointment, and make an appointment" TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+       
         <!-- Data Grid and Header Buttons-->
         <DataGrid ItemsSource="{Binding userDoc}" x:Name="DocGrid" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
                   Background="{x:Null}" RowBackground="LightGray" AlternatingRowBackground="LightBlue" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
@@ -65,9 +66,9 @@
         </DataGrid>
 
         <TextBlock x:Name="DocText" Text="no current appointments" Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
-        <Button x:Name="Appointment_Button2" Content="Schedule Appointment" Grid.Row="8" Grid.Column="5" HorizontalAlignment="Center" Height="30" Width="140"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Schedule_ButtonClick"/>
+        <Button x:Name="Appointment_Button2" Grid.ColumnSpan="2" Content="Request Appointment" Grid.Row="9" Grid.Column="8" Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="140"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Schedule_ButtonClick"/>
 
-        <Button HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">
+        <Button HorizontalAlignment="Stretch" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -83,7 +84,7 @@
             </Grid>
         </Button>
 
-        <Button x:Name="Appointment_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray"  Click="Appointment_Button_Click" >
+        <Button x:Name="Appointment_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray"  Click="Appointment_Button_Click" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -92,13 +93,14 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Height="50" Stroke="LightBlue" Fill="LightBlue"/>
                 <Image Grid.Column="0" IsEnabled="False" Source="small-calendar.png" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center">
                 </Image>
                 <TextBlock Grid.Column="0" Text="Appointments" HorizontalAlignment="Center" FontSize="22" Grid.ColumnSpan="2" FontWeight="DemiBold" VerticalAlignment="Center" Padding="20,0,0,0" />
             </Grid>
         </Button>
 
-        <Button x:Name="Presciption_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Presciption_Button_Click" >
+        <Button x:Name="Presciption_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Presciption_Button_Click" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -112,7 +114,7 @@
                 <TextBlock Grid.Column="0" Text="Prescriptions" HorizontalAlignment="Center" FontSize="22" Grid.ColumnSpan="2" FontWeight="DemiBold" VerticalAlignment="Center" Padding="5,0,0,0" />
             </Grid>
         </Button>
-        <Button x:Name="Billing_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Billing_Button_Click" >
+        <Button x:Name="Billing_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Billing_Button_Click" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
