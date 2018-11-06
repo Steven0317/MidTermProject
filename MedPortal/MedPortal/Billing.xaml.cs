@@ -43,9 +43,8 @@ namespace MedPortal
 
             var item = BillGrid.SelectedItem;
 
-            for (int i = 0; i < userBill.Count; i++)
-            {
-                if (userBill[i].Bill == "Y")
+           
+                if (userBill.Any())
                 {
                     BillGrid.ItemsSource = userBill;
                 }
@@ -55,7 +54,7 @@ namespace MedPortal
                     BillGrid.Visibility = Visibility.Hidden;
                     BillText.Visibility = Visibility.Visible;
                 }
-            }
+           
         }
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)
         {

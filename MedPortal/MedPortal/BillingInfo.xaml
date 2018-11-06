@@ -59,11 +59,14 @@
 
         <Image  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
         <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock  Text="Payment Information" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Payment Information" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
         <TextBlock x:Name="LeftBox" Text=" Amount: " Grid.Row="5" Grid.Column="5" FontWeight="DemiBold" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
-        <TextBlock  Text="Enter Billing Information" FontSize="18" FontWeight="DemiBold" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" />
+        <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+
+
+        <TextBlock x:Name="EnterInfo" Text="Enter Billing Information" FontSize="18" FontWeight="DemiBold" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" />
 
         <TextBlock x:Name="CC" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Number" Grid.Row="7" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
         <xctk:MaskedTextBox x:Name="CBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Mask="9999-9999-9999-9999"/>

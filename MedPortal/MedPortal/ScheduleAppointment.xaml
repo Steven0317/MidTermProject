@@ -53,7 +53,7 @@
         <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="18" Fill="WhiteSmoke" HorizontalAlignment="Stretch" Grid.Row="1"  Stroke="LightGray" VerticalAlignment="Stretch"  />
         <Button x:Name="Schedule" Content="Schedule" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="30" Width="140"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Schedule_Click"/>
 
-        <!-- Header Buttons-->
+        
         <Rectangle Grid.ColumnSpan="16" Fill="#FF1CADC2" HorizontalAlignment="Stretch" Grid.Row="0"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" RadiusX="5" RadiusY="5" />
         <StackPanel Margin="10" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2">
             <ComboBox SelectionChanged="Location_SelectionChanged" Name="LocationSelect">
@@ -79,8 +79,8 @@
                 </ComboBoxItem>
             </ComboBox>
         </StackPanel>
-        
-        
+
+        <!-- Header Buttons-->
         <Button HorizontalAlignment="Stretch" Grid.Row="1" Click="Button_Click" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch"  Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">
             <Grid>
                 <Grid.RowDefinitions>

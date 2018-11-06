@@ -59,6 +59,7 @@ namespace MedPortal
             {
                 RXGrid.Visibility = Visibility.Hidden;
                 RXText.Visibility = Visibility.Visible;
+                Refill_Button.Visibility = Visibility.Hidden;
             }
 
         }

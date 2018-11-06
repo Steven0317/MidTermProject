@@ -39,6 +39,7 @@ namespace MedPortal
             {
                 DocGrid.Visibility = Visibility.Hidden;
                 DocText.Visibility = Visibility.Visible;
+                Appointment_Button2.Visibility = Visibility.Hidden;
             }
         }
         private ObservableCollection<DocBill> getLoggedInDoc()

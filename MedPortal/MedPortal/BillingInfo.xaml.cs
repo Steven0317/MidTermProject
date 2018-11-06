@@ -32,6 +32,26 @@ namespace MedPortal
             {
                 LeftBox.Text += Billing.UserBill.left.ToString();
             }
+            else
+            {
+                LeftBox.Visibility = Visibility.Hidden;
+                EnterInfo.Visibility = Visibility.Hidden;
+                CC.Visibility = Visibility.Hidden;
+                CBox.Visibility = Visibility.Hidden;
+                Exp.Visibility = Visibility.Hidden;
+                ExpBox.Visibility = Visibility.Hidden;
+                Sec.Visibility = Visibility.Hidden;
+                SecBox.Visibility = Visibility.Hidden;
+                BillAddr.Visibility = Visibility.Hidden;
+                BillCity.Visibility = Visibility.Hidden;
+                BillZip.Visibility = Visibility.Hidden;
+                BillBox.Visibility = Visibility.Hidden;
+                CityBox.Visibility = Visibility.Hidden;
+                ZipBox.Visibility = Visibility.Hidden;
+                Pay.Visibility = Visibility.Hidden;
+                BillText.Visibility = Visibility.Visible;
+
+            }
 
             Welcome.Text += LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
 

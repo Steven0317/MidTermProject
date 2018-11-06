@@ -70,9 +70,7 @@ namespace MedPortal
                 AppText.Visibility = Visibility.Visible;
             }
 
-            for (int i = 0; i < userBill.Count; i++)
-            {
-                if (userBill[i].Bill == "Y")
+                if (userBill.Any())
                 {
                     BillGrid.ItemsSource = userBill;
                 }
@@ -81,7 +79,7 @@ namespace MedPortal
                     BillGrid.Visibility = Visibility.Hidden;
                     BillText.Visibility = Visibility.Visible;
                 }
-            }
+            
             if (userRX.Any())
             {
                 RXGrid.ItemsSource = userRX; ;
@@ -195,5 +193,7 @@ namespace MedPortal
         {
             NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
         }
+
+        
     }
 }
