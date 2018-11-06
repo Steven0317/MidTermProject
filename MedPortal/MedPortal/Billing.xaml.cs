@@ -26,19 +26,19 @@ namespace MedPortal
     {
 
         XmlSerializer serializer = new XmlSerializer(typeof(List<DocBill>));
-        public List<DocBill> userBill = new List<DocBill>();
+        public static List<DocBill> userBill = new List<DocBill>();
         public List<DocBill> userDoc = new List<DocBill>();
+        public static DocBill UserBill;
 
-        
 
         public Billing()
         {
             InitializeComponent();
+            Welcome.Text += LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
 
-           
             userBill = getLoggedInBill();
 
-            ;
+   
             userDoc = getLoggedInDocBill();
 
             var item = BillGrid.SelectedItem;
@@ -51,6 +51,7 @@ namespace MedPortal
                 }
                 if (!userDoc.Any())
                 {
+                    Pay.Visibility = Visibility.Hidden;
                     BillGrid.Visibility = Visibility.Hidden;
                     BillText.Visibility = Visibility.Visible;
                 }
@@ -81,6 +82,13 @@ namespace MedPortal
             LoginPage.LoggedinUser = null;
             NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
+        }
+
+
 
         private List<DocBill> getLoggedInBill()
         {
@@ -114,9 +122,12 @@ namespace MedPortal
         private void Pay_Click(object sender, RoutedEventArgs e)
         {
 
+            UserBill =  (DocBill) BillGrid.SelectedItem;
 
             NavigationService.Navigate(new Uri("BillingInfo.xaml", UriKind.Relative));
 
+            
+            
             /*
 
 

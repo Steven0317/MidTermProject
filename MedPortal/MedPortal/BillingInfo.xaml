@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MedPortal"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="2000"
       Title="BillingInfo">
@@ -48,34 +49,42 @@
         <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="18" Fill="WhiteSmoke" HorizontalAlignment="Stretch" Grid.Row="1"  Stroke="LightGray" VerticalAlignment="Stretch"  />
         <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" Grid.RowSpan="7" Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
 
-        <TextBlock  Text="Current Bills" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock Text="Here you can view and pay your bills" TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
-
-        <DataGrid ItemsSource="{Binding userBill}" x:Name="BillGrid" Padding="0,5,0,0" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
-                  Background="{x:Null}" RowBackground="LightBlue" AlternatingRowBackground="LightGray" IsReadOnly="True" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
-                  CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" 
-                  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" >
-            <DataGrid.ItemContainerStyle>
-                <Style TargetType="DataGridRow">
-                    
-                </Style>
-            </DataGrid.ItemContainerStyle>
-            <DataGrid.Columns>
-
-                <DataGridTextColumn Header="Invoice Number" Binding="{Binding Invoice}" Width="*" />
-                <DataGridTextColumn Header="Total" Binding="{Binding PriceOfBill}" Width="*" />
-                <DataGridTextColumn x:Name="paid" Header="Remaining Balance" Binding="{Binding LeftToPay}" Width="*" />
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top">                                
+            <Hyperlink Click="Hyperlink_Click">
+                Account Overview
+            </Hyperlink>
+        </TextBlock>
 
 
-            </DataGrid.Columns>
-        </DataGrid>
 
-        <TextBlock Text="Enter Amount to pay" TextWrapping="WrapWithOverflow" Grid.Row="9" Grid.Column="7" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        
-        
-        <TextBox x:Name="PayBox"  TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150"  Grid.Row="9" Grid.Column="8" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20"/>
-        <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9"  Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}"/>
+        <Image  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
+        <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock  Text="Payment Information" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+
+        <TextBlock x:Name="LeftBox" Text=" Amount: " Grid.Row="5" Grid.Column="5" FontWeight="DemiBold" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+        <TextBlock  Text="Enter Billing Information" FontSize="18" FontWeight="DemiBold" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" />
+
+        <TextBlock x:Name="CC" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Number" Grid.Row="7" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
+        <xctk:MaskedTextBox x:Name="CBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Mask="9999-9999-9999-9999"/>
+
+        <TextBlock x:Name="Exp" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Expiration" Grid.Row="7" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
+        <TextBox x:Name="ExpBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+
+        <TextBlock x:Name="Sec" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Security Code" Grid.Row="8" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
+        <TextBox x:Name="SecBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+
+        <TextBlock x:Name="BillAddr" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing Address" Grid.Row="8" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
+        <TextBox x:Name="BillBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+
+        <TextBlock x:Name="BillCity" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing City" Grid.Row="9" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
+        <TextBox x:Name="CityBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+
+        <TextBlock x:Name="BillZip" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing Zip Code" Grid.Row="9" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
+        <TextBox x:Name="ZipBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+
+
+        <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9"  Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Pay_Click" />
 
         <!-- Header Buttons-->
 
@@ -133,7 +142,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Height="50" Stroke="LightBlue" Fill="LightBlue"/>
+                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Height="75" Stroke="LightBlue" Fill="LightBlue"/>
                 <Image IsEnabled="False" Source="credit-card.png" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center">
                 </Image>
                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Bill Payment" HorizontalAlignment="Center" FontSize="22" FontWeight="DemiBold" VerticalAlignment="Center" />

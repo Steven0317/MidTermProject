@@ -51,9 +51,17 @@
         <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Stretch" Grid.RowSpan="4"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
         <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="7" HorizontalAlignment="Stretch" Grid.RowSpan="4"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
         <Rectangle Fill="#FFF4F4F5" Grid.Column="4" Grid.Row="12" HorizontalAlignment="Stretch" Grid.RowSpan="4"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" Grid.ColumnSpan="6" RadiusY="10" RadiusX="10" />
-        
-        <TextBlock x:Name="Welcome" Grid.Row="0"  Grid.Column="0" Text="Welcome"  FontSize="18" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
-        
+
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top">                                
+            <Hyperlink Click="Hyperlink_Click">
+                Account Overview
+            </Hyperlink>
+        </TextBlock>
+
+
+
+        <Image  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
+        <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
 
         <!--Images for quick glances -->
         <TextBlock Text="Appointments" Grid.Row="2" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontSize="18" FontWeight="DemiBold" Padding="50,15,10,25" />
@@ -120,7 +128,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Height="50" Stroke="LightBlue" Fill="LightBlue"/>
+                <Rectangle HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" Height="75" Grid.ColumnSpan="3" Stroke="LightBlue" Fill="LightBlue"/>
                 
                 <Image Grid.Column="0" Source="home-vector.png" IsEnabled="False" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" >
                 </Image>

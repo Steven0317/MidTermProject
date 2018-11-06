@@ -34,7 +34,7 @@ namespace MedPortal
         public HomePage()
         {
             InitializeComponent();
-            Welcome.Text +=  ", " + LoginPage.LoggedinUser.FirstName;
+            Welcome.Text +=  LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
 
             try
             {
@@ -189,6 +189,11 @@ namespace MedPortal
         {
             LoginPage.LoggedinUser = null;
             NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
         }
     }
 }

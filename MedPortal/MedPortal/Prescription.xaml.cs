@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -22,22 +23,34 @@ namespace MedPortal
     /// <summary>
     /// Interaction logic for Prescription.xaml
     /// </summary>
-    public partial class Prescription : Page
+    public partial class Prescription : Page, INotifyPropertyChanged
     {
         XmlSerializer serializer = new XmlSerializer(typeof(List<RXinfo>));
-        ObservableCollection<RXinfo> userObsrv = new ObservableCollection<RXinfo>();
+        //ObservableCollection<RXinfo> userObsrv { get; set; } = new ObservableCollection<RXinfo>();
         public List<RXinfo> userRX = new List<RXinfo>();
+
+
+        //func for updating selected prescription 
+        private ObservableCollection<RXinfo> userObsrv;
+        public ObservableCollection<RXinfo> UserObsrv
+        {
+            get { return userObsrv; }
+            set
+            {
+                userObsrv = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("userObsrv"));
+            }
+        }
+
 
         public Prescription()
         {
             InitializeComponent();
+            Welcome.Text += LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
 
-            
             userObsrv = getLoggedInRX();
 
-            
-            
-            
+
             if (userObsrv.Any())
             {
                 RXGrid.ItemsSource = userObsrv;
@@ -89,9 +102,14 @@ namespace MedPortal
             NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
         }
 
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
+        }
+
         private void Refill_Button_Click(object sender, RoutedEventArgs e)
         {
-            if(RXGrid.SelectedItem != null)
+            if (RXGrid.SelectedItem != null)
             {
                 RXinfo temp = (RXinfo)(RXGrid.SelectedItem);
 
@@ -106,8 +124,14 @@ namespace MedPortal
                         if (script.scriptNumber == temp.scriptNumber)
                         {
                             script.refills--;
+                            
                         }
+ 
                     }
+
+                    RXGrid.ItemsSource = null;
+                    userObsrv = getLoggedInRX();
+                    RXGrid.ItemsSource = userObsrv;
 
 
                     if (HomePage.RXCollection.Count == 0 && File.Exists("rx.xml"))
@@ -124,10 +148,12 @@ namespace MedPortal
                     }
 
                 }
-                
             }
-
-           
         }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
+
+          
+ 
+
