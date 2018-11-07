@@ -56,7 +56,7 @@
         
         <Rectangle Grid.ColumnSpan="16" Fill="#FF1CADC2" HorizontalAlignment="Stretch" Grid.Row="0"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" RadiusX="5" RadiusY="5" />
         <StackPanel Margin="10" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2">
-            <ComboBox SelectionChanged="Location_SelectionChanged" Name="LocationSelect">
+            <ComboBox SelectionChanged="Location_SelectionChanged" Name="LocationSelect" >
                 <ComboBoxItem>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Watson Clinic South" x:Name="WCS"/>

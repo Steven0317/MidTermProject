@@ -60,7 +60,7 @@
         <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
         
         <TextBlock  Text="Current Medication" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock Text="select the prescription that you want to refill from the list below" TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Justify" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="select the prescription that you want to refill then click the button below" TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Justify" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
        
         <!-- DataGrid and Header TextBlocks-->
         <DataGrid x:Name="RXGrid" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 

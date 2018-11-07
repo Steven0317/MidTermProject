@@ -33,11 +33,13 @@ namespace MedPortal
         public ComboBox combo = new ComboBox();
         public StackPanel stack = new StackPanel();
         public DateTimePicker dateTimePicker = new DateTimePicker();
+
+
         public ScheduleAppointment()
         {
             InitializeComponent();
 
-            combo.SelectionChanged += Provider_SelectionChanged;
+            //combo.SelectionChanged += Provider_SelectionChanged;
             dateTimePicker.Format = DateTimeFormat.ShortTime;
 
             grid.Children.Add(dateTimePicker);
@@ -90,7 +92,7 @@ namespace MedPortal
         private void Location_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             List<Doc> temp = new List<Doc>();
-            
+           
             if (LocationSelect.SelectedIndex == 0)
             {
                 for (int i = 0; i < 4; i++)
@@ -147,12 +149,13 @@ namespace MedPortal
 
         private void Provider_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
             provider = combo.SelectedItem.ToString();
         }
         
         private void Schedule_Click(object sender, RoutedEventArgs e)
         {
-            HomePage.DocCollection.Add(new DocBill(userObsrv[0].SSN, provider, dateTimePicker.Text, location));
+            HomePage.DocCollection.Add(new DocBill(userObsrv[0].SSN, combo.SelectedItem.ToString(), dateTimePicker.Text, location));
 
             string path = "doctors.xml";
 
@@ -169,6 +172,7 @@ namespace MedPortal
 
            
         }
+
         
     }
 }
