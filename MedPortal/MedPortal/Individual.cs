@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Xml.Serialization;
 
 namespace MedPortal
@@ -32,8 +33,8 @@ namespace MedPortal
         public string insuranceProvider;
         [XmlAttribute(DataType = "string")]
         public string salt;
-        [XmlAttribute(DataType = "string")]
-        public string userImage;
+        [XmlElement(typeof(ImageSource))]
+        public ImageSource userImage;
         
 
 
@@ -67,7 +68,7 @@ namespace MedPortal
         public string PCP { get {return pcp; } set {value = pcp; } }
         public string IP { get {return insuranceProvider; } set {value = insuranceProvider; } }
         public string Salt { get { return salt; } set { value = salt; } }
-        public byte [] UserImage { get { return Convert.FromBase64String(userImage);  } set { value = Convert.FromBase64String(userImage); }  }
+        //public ImageSource UserImage { get { return Convert.FromBase64String(userImage);  } set { value = Convert.FromBase64String(userImage); }  }
 
     }
 }

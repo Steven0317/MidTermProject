@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -79,31 +81,26 @@ namespace MedPortal
             NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
         }
 
+       
+        //opens file explorer to select anew user default picture
         private void Change_Picture_Click(object sender, RoutedEventArgs e)
         {
 
-
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-
-
            
             dlg.DefaultExt = ".png";
             dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
 
-
-             
-            Nullable<bool> result = dlg.ShowDialog();
-
-
-             
-            if (result == true)
+            if (dlg.ShowDialog() == true)
             {
 
-                System.Windows.Controls.Image myImage = new System.Windows.Controls.Image();
+                Image myImage = new Image();
                 myImage.Source = new BitmapImage(new Uri(dlg.FileName));
-                
-                
+                myImage.Source = new ImageSourceConverter().ConvertFromString(new Uri(dlg.FileName).ToString()) as ImageSource;
+                LoginPage.LoggedinUser.userImage = myImage.Source;
+                userImage.Source = LoginPage.LoggedinUser.userImage;
+                 
+               
             }
         }
     }

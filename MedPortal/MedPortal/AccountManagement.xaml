@@ -100,7 +100,7 @@
         <TextBlock x:Name="allergies" Text="" Grid.Row="11" Grid.Column="6" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="12" Height="24" Width="180" />
 
 
-        <Image  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
+        <Image x:Name="userImage" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
 
 
 

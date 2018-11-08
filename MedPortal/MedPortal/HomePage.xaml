@@ -99,12 +99,12 @@
 
         <DataGrid ItemsSource="{Binding userRX}" x:Name="RXGrid" Padding="0,5,0,0" Grid.Row="8" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
                   Background="{x:Null}" RowBackground="LightBlue" AlternatingRowBackground="LightGray" IsReadOnly="True" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
-                  CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" 
+                  CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="True" 
                   HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="*" />
                 <DataGridTextColumn Header="Fill Date" Binding="{Binding FillDate}" Width="*" />
-                <DataGridTextColumn Header="Experation Date" Binding="{Binding ExpirationDate}" Width="*" />
+                <DataGridTextColumn Header="Expiration Date" Binding="{Binding ExpirationDate}" Width="*" />
                 
             </DataGrid.Columns>
         </DataGrid>
