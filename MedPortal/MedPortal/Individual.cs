@@ -32,6 +32,8 @@ namespace MedPortal
         public string insuranceProvider;
         [XmlAttribute(DataType = "string")]
         public string salt;
+        [XmlAttribute(DataType = "string")]
+        public string userImage;
         
 
 
@@ -65,6 +67,7 @@ namespace MedPortal
         public string PCP { get {return pcp; } set {value = pcp; } }
         public string IP { get {return insuranceProvider; } set {value = insuranceProvider; } }
         public string Salt { get { return salt; } set { value = salt; } }
+        public byte [] UserImage { get { return Convert.FromBase64String(userImage);  } set { value = Convert.FromBase64String(userImage); }  }
 
     }
 }

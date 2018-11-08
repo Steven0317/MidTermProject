@@ -50,7 +50,16 @@
         <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="18" Fill="WhiteSmoke" HorizontalAlignment="Stretch" Grid.Row="1"  Stroke="LightGray" VerticalAlignment="Stretch"  />
 
         
-        
+
+
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top" >                                
+            <Hyperlink Click="Change_Picture_Click">
+                Change Profile Picture
+            </Hyperlink>
+        </TextBlock>
+
+
+
         <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
 
 
@@ -60,9 +69,9 @@
             </Hyperlink>
         </TextBlock>
         <TextBlock Text="Personal Information" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Left" Grid.ColumnSpan="2" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Height="24" Width="180" />
-        
+
         <TextBlock Text="Full Name" Grid.Row="5" Grid.Column="6" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Height="24" Width="180" />
-        
+
         <TextBlock x:Name="Name" Text="" Grid.Row="5" Grid.Column="6" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="12" Height="24" Width="180" />
 
 
@@ -92,12 +101,12 @@
 
 
         <Image  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
-        
-      
-       
 
-       
-        
+
+
+
+
+
 
         <Button HorizontalAlignment="Stretch" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">
             <Grid>

@@ -145,3 +145,5 @@ C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\BillingInfo
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\ScheduleAppointment.baml
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\AccountManagement.g.cs
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\AccountManagement.baml
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\AccountManagement.g.cs
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\AccountManagement.baml

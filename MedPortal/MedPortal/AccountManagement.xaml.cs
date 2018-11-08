@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,5 +79,32 @@ namespace MedPortal
             NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
         }
 
+        private void Change_Picture_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+
+
+           
+            dlg.DefaultExt = ".png";
+            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+
+             
+            Nullable<bool> result = dlg.ShowDialog();
+
+
+             
+            if (result == true)
+            {
+
+                System.Windows.Controls.Image myImage = new System.Windows.Controls.Image();
+                myImage.Source = new BitmapImage(new Uri(dlg.FileName));
+                
+                
+            }
+        }
     }
 }
