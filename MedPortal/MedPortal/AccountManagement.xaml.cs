@@ -48,6 +48,22 @@ namespace MedPortal
             insurance.Text = LoginPage.LoggedinUser.insuranceProvider;
             allergies.Text = LoginPage.LoggedinUser.allergies;
 
+
+            if (LoginPage.LoggedinUser.UserImage == null)
+            {
+                string stringPath = "UserImages/default-user-image.png";
+                BitmapImage logo = new BitmapImage();
+                logo.BeginInit();
+                logo.UriSource = new Uri(stringPath, UriKind.Relative);
+                logo.EndInit();
+
+                userImage.Source = logo;
+            }
+            else
+            {
+                userImage.Source = LoginPage.LoggedinUser.userImage;
+            }
+
         }
 
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)

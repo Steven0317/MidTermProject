@@ -60,7 +60,7 @@
 
 
 
-        <Image  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
+        <Image x:Name="userImage" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
         <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
 
         <!--Images for quick glances -->

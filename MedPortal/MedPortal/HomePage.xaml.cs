@@ -36,6 +36,22 @@ namespace MedPortal
             InitializeComponent();
             Welcome.Text +=  LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
 
+            if (LoginPage.LoggedinUser.UserImage == null)
+            {
+                string stringPath = "UserImages/default-user-image.png";
+                BitmapImage logo = new BitmapImage();
+                logo.BeginInit();
+                logo.UriSource = new Uri(stringPath, UriKind.Relative);
+                logo.EndInit();
+
+                userImage.Source = logo;
+            }
+            else
+            {
+                userImage.Source = LoginPage.LoggedinUser.userImage;
+            }
+
+
             try
             {
                 ReadDocFromMemory("doctors.xml");
