@@ -51,7 +51,7 @@
         <TextBlock  Text="Provider" FontSize="22" FontWeight="DemiBold" Grid.Row="7" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <TextBlock  Text="Time" FontSize="22" FontWeight="DemiBold" Grid.Row="8" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="18" Fill="WhiteSmoke" HorizontalAlignment="Stretch" Grid.Row="1"  Stroke="LightGray" VerticalAlignment="Stretch"  />
-        <Button x:Name="Schedule" Content="Schedule" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="30" Width="140"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Schedule_Click"/>
+        <Button x:Name="Schedule" Foreground="WhiteSmoke" Content="Schedule" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="30" Width="140"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Schedule_Click"/>
 
         
         <Rectangle Grid.ColumnSpan="16" Fill="#FF1CADC2" HorizontalAlignment="Stretch" Grid.Row="0"  Stroke="#FF1CADC2" VerticalAlignment="Stretch" RadiusX="5" RadiusY="5" />
@@ -81,7 +81,22 @@
         </StackPanel>
 
         <!-- Header Buttons-->
-        <Button HorizontalAlignment="Stretch" Grid.Row="1" Click="Button_Click" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch"  Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">
+
+
+        <Image x:Name="userImage" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
+
+
+        <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+
+
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top">                                
+            <Hyperlink Click="Hyperlink_Click"  >
+                Account Overview
+            </Hyperlink>
+        </TextBlock>
+
+
+        <Button HorizontalAlignment="Stretch" Grid.Row="6" Click="Button_Click" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch"  Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -97,7 +112,7 @@
             </Grid>
         </Button>
 
-        <Button x:Name="Appointment_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray"  Click="Appointment_Button_Click" >
+        <Button x:Name="Appointment_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray"  Click="Appointment_Button_Click" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -112,7 +127,7 @@
             </Grid>
         </Button>
 
-        <Button x:Name="Presciption_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Presciption_Button_Click" >
+        <Button x:Name="Presciption_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Presciption_Button_Click" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -126,7 +141,7 @@
                 <TextBlock Grid.Column="0" Text="Prescriptions" HorizontalAlignment="Center" FontSize="22" Grid.ColumnSpan="2" FontWeight="DemiBold" VerticalAlignment="Center" Padding="5,0,0,0" />
             </Grid>
         </Button>
-        <Button x:Name="Billing_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Billing_Button_Click" >
+        <Button x:Name="Billing_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Billing_Button_Click" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -143,6 +158,10 @@
 
         <TextBlock  Text="Logout" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontWeight="DemiBold"/>
 
+        <Button x:Name="Logout_Button" HorizontalAlignment="Stretch" Grid.Column="11" VerticalAlignment="Stretch" Background="{x:Null}" BorderThickness="0" Click="Logout_Button_Click"  Style="{DynamicResource NoMouseOver}">
+            <Image IsEnabled="False" Source="logout.png" Height="35" >
+            </Image>
+        </Button>
         
     </Grid>
 </Page>

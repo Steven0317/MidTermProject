@@ -36,7 +36,7 @@ namespace MedPortal
                 string stringPath = "UserImages/default-user-image.png";
                 BitmapImage logo = new BitmapImage();
                 logo.BeginInit();
-                logo.UriSource = new Uri(stringPath);
+                logo.UriSource = new Uri(stringPath, UriKind.Relative);
                 logo.EndInit();
 
                 userImage.Source = logo;

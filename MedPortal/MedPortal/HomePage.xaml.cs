@@ -35,6 +35,7 @@ namespace MedPortal
         {
             InitializeComponent();
             Welcome.Text +=  LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
+            snapshot.Text = LoginPage.LoggedinUser.FirstName + "'s Snapshots";
 
             if (LoginPage.LoggedinUser.UserImage == null)
             {

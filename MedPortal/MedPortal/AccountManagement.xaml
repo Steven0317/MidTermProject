@@ -52,7 +52,7 @@
         
 
 
-        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top" >                                
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2"  >                                
             <Hyperlink Click="Change_Picture_Click">
                 Change Profile Picture
             </Hyperlink>
@@ -68,6 +68,8 @@
                 Account Overview
             </Hyperlink>
         </TextBlock>
+        
+        
         <TextBlock Text="Personal Information" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Left" Grid.ColumnSpan="2" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Height="24" Width="180" />
 
         <TextBlock Text="Full Name" Grid.Row="5" Grid.Column="6" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Height="24" Width="180" />

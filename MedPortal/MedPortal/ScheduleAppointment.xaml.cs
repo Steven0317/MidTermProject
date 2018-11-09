@@ -39,8 +39,12 @@ namespace MedPortal
         {
             InitializeComponent();
 
-            //combo.SelectionChanged += Provider_SelectionChanged;
+            Welcome.Text += LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
+
+            
             dateTimePicker.Format = DateTimeFormat.ShortTime;
+
+            dateTimePicker.MaxHeight = 35;
 
             grid.Children.Add(dateTimePicker);
             Grid.SetColumn(dateTimePicker, 6);
@@ -56,6 +60,23 @@ namespace MedPortal
             Grid.SetColumn(stack, 6);
             Grid.SetRow(stack, 7);
             Grid.SetColumnSpan(stack, 2);
+
+
+            if (LoginPage.LoggedinUser.UserImage == null)
+            {
+                string stringPath = "UserImages/default-user-image.png";
+                BitmapImage logo = new BitmapImage();
+                logo.BeginInit();
+                logo.UriSource = new Uri(stringPath, UriKind.Relative);
+                logo.EndInit();
+
+                userImage.Source = logo;
+            }
+            else
+            {
+                userImage.Source = LoginPage.LoggedinUser.userImage;
+            }
+
 
         }
         private ObservableCollection<DocBill> getloggedindoc()
@@ -88,6 +109,12 @@ namespace MedPortal
         {
             NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
+        }
+
 
         private void Location_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
@@ -173,6 +200,10 @@ namespace MedPortal
            
         }
 
-        
+        private void Logout_Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoginPage.LoggedinUser = null;
+            NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
+        }
     }
 }
