@@ -68,23 +68,23 @@
 
         <TextBlock x:Name="EnterInfo" Text="Enter Billing Information" FontSize="18" FontWeight="DemiBold" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" />
 
-        <TextBlock x:Name="CC" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Number" Grid.Row="7" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <xctk:MaskedTextBox x:Name="CBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Mask="9999-9999-9999-9999"/>
+        <TextBlock x:Name="CC" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Num" Grid.Row="7" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
+        <xctk:MaskedTextBox x:Name="CBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Mask="9999-9999-9999-9999"/>
 
-        <TextBlock x:Name="Exp" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Expiration" Grid.Row="7" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="ExpBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBlock x:Name="Exp" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Exp" Grid.Row="7" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
+        <TextBox x:Name="ExpBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
         <TextBlock x:Name="Sec" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Security Code" Grid.Row="8" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="SecBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="SecBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
         <TextBlock x:Name="BillAddr" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing Address" Grid.Row="8" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="BillBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="BillBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
         <TextBlock x:Name="BillCity" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing City" Grid.Row="9" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="CityBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="CityBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
         <TextBlock x:Name="BillZip" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing Zip Code" Grid.Row="9" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="ZipBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="ZipBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
 
         <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9"  Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Pay_Click" />

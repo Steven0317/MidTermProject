@@ -63,8 +63,8 @@
         <!-- Data Grid and Header Buttons-->
         <DataGrid ItemsSource="{Binding userDoc}" x:Name="DocGrid" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
                   Background="{x:Null}" RowBackground="LightGray" AlternatingRowBackground="LightBlue" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
-                  CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserAddRows="False"
-                  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0">
+                  CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="True" CanUserAddRows="False"
+                  HorizontalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0" FontSize="16">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Provider" Binding="{Binding Office}" Width="*" />
                 <DataGridTextColumn Header="Location" Binding="{Binding Location}" Width=" *" />

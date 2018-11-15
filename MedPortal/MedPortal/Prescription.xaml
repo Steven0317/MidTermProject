@@ -63,10 +63,10 @@
         <TextBlock Text="Select the prescription that you want to refill, then click the  Refill button below." TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
        
         <!-- DataGrid and Header TextBlocks-->
-        <DataGrid x:Name="RXGrid" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
+        <DataGrid x:Name="RXGrid" Grid.Row="6" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
                   Background="{x:Null}" RowBackground="LightGray" AlternatingRowBackground="LightBlue" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
                   CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="True" CanUserAddRows="False"
-                  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" SelectionMode="Single" RowHeaderWidth="0"  SelectedItem="{Binding UserObsrv}">
+                  HorizontalScrollBarVisibility="Disabled"  SelectionMode="Single" RowHeaderWidth="0"  SelectedItem="{Binding UserObsrv}" FontSize="16">
             <DataGrid.Columns>
                 <DataGridTextColumn  Binding="{Binding ScriptNumber}"  Header="Prescription Number" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="*" IsReadOnly="True" />
