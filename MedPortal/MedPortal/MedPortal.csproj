@@ -87,6 +87,9 @@
     <Compile Include="BillingInfo.xaml.cs">
       <DependentUpon>BillingInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Chat.xaml.cs">
+      <DependentUpon>Chat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Doc.cs" />
     <Compile Include="EBC.cs" />
     <Compile Include="HomePage.xaml.cs">
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BillingInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Chat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -216,6 +223,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UserImages\default-user-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChatBackend\ChatBackend.csproj">
+      <Project>{F71D4954-4DA7-431E-8EB4-982028081100}</Project>
+      <Name>ChatBackend</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

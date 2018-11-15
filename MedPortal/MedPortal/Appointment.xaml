@@ -136,6 +136,20 @@
                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Bill Payment" HorizontalAlignment="Center" FontSize="22" FontWeight="DemiBold" VerticalAlignment="Center" />
             </Grid>
         </Button>
+        <Button x:Name="Question_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Question_Button_Click" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image IsEnabled="False" Source="credit-card.png" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center">
+                </Image>
+                <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Ask The Doctor" HorizontalAlignment="Center" FontSize="22" FontWeight="DemiBold" VerticalAlignment="Center" />
+            </Grid>
+        </Button>
 
         <TextBlock  Text="Logout" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontWeight="DemiBold"/>
 

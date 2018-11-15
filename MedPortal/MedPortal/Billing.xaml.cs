@@ -103,7 +103,10 @@ namespace MedPortal
         {
             NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
         }
-
+        private void Question_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Chat.xaml", UriKind.Relative));
+        }
 
 
         private List<DocBill> getLoggedInBill()
