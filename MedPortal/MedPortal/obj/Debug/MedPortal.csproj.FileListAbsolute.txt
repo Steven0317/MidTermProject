@@ -151,3 +151,7 @@ C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\Chat.g.cs
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\Chat.baml
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\bin\Debug\ChatBackend.dll
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\MedPortal\bin\Debug\ChatBackend.pdb
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\bin\Debug\ChatBackend.dll
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\bin\Debug\ChatBackend.pdb
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\Chat.g.cs
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\MedPortal\obj\Debug\Chat.baml

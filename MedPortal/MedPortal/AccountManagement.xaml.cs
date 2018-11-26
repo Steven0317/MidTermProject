@@ -119,9 +119,21 @@ namespace MedPortal
                 myImage.Source = new ImageSourceConverter().ConvertFromString(new Uri(dlg.FileName).ToString()) as ImageSource;
                 LoginPage.LoggedinUser.userImage = myImage.Source;
                 userImage.Source = LoginPage.LoggedinUser.userImage;
-                 
-               
+
+                
             }
         }
+
+        private byte[] saveImage(string path)
+        {
+            FileStream filestream = new FileStream(path, FileMode.Open, FileAccess.Read);
+            byte[] buffer = new byte[filestream.Length];
+            filestream.Read(buffer, 0, (int)filestream.Length);
+            filestream.Close();
+            return buffer;
+        }
+
+       
     }
+
 }

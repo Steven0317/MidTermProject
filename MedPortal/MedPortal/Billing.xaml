@@ -95,7 +95,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image IsEnabled="False" Source="credit-card.png" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image IsEnabled="False" Source="UserImages/stethoscope.png" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center">
                 </Image>
                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Ask The Doctor" HorizontalAlignment="Center" FontSize="22" FontWeight="DemiBold" VerticalAlignment="Center" />
             </Grid>

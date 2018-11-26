@@ -55,7 +55,7 @@ namespace ChatBackend
 
             //displayed locally
             _displayMessageDelegate(new CompositeType("Info", "Welcome to MedPortal's Ask The Doctor, Go ahead and ask your question " +
-                                                        "and a health care professional will be \nwith you shortly"));
+                                                        "and a health care professional will be with you shortly"));
         }
 
         private void StopService()

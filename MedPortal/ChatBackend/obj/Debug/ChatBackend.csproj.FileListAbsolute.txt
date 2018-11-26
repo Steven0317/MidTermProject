@@ -4,3 +4,9 @@ C:\Users\Steven\Desktop\MidTermProject\MedPortal\ChatBackend\obj\Debug\ChatBacke
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\ChatBackend\obj\Debug\ChatBackend.csproj.CoreCompileInputs.cache
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\ChatBackend\obj\Debug\ChatBackend.dll
 C:\Users\Steven\Desktop\MidTermProject\MedPortal\ChatBackend\obj\Debug\ChatBackend.pdb
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\ChatBackend\bin\Debug\ChatBackend.dll
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\ChatBackend\bin\Debug\ChatBackend.pdb
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\ChatBackend\obj\Debug\ChatBackend.csprojAssemblyReference.cache
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\ChatBackend\obj\Debug\ChatBackend.csproj.CoreCompileInputs.cache
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\ChatBackend\obj\Debug\ChatBackend.dll
+C:\Users\sfaul\Desktop\MidTermProject\MedPortal\ChatBackend\obj\Debug\ChatBackend.pdb

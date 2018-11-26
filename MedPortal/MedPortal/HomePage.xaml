@@ -112,9 +112,9 @@
 
 
         <!-- Textblocks for non filled glances-->
-        <TextBlock x:Name="AppText" Text="no upcoming appointments" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
-        <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="14" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
-        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+        <TextBlock x:Name="AppText" Text="no upcoming appointments" Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+        <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="14" Grid.Column="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
+        <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="9" Grid.Column="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
 
        
         
@@ -128,11 +128,12 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image IsEnabled="False" Source="credit-card.png" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image IsEnabled="False" Source="UserImages/stethoscope.png" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center">
                 </Image>
                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Ask The Doctor" HorizontalAlignment="Center" FontSize="22" FontWeight="DemiBold" VerticalAlignment="Center" />
             </Grid>
         </Button>
+       
         <Button HorizontalAlignment="Stretch" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch"  Background="WhiteSmoke" Grid.RowSpan="1" BorderThickness="1" BorderBrush="LightGray" HorizontalContentAlignment="Stretch">
             <Grid>
                 <Grid.RowDefinitions>
