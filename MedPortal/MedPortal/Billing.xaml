@@ -54,21 +54,17 @@
             </Hyperlink>
         </TextBlock>
         
-        <Image x:Name="userImage" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
-        <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+        <Image x:Name="userImage" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding Image}" />
+        <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text="{Binding UserLogin}"  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBlock  Text="Current Bills" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBlock Text="Select the bill you wish to pay, then click the Payment button below" TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
 
-        <DataGrid ItemsSource="{Binding userBill}" x:Name="BillGrid" Padding="0,5,0,0" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
+        <DataGrid ItemsSource="{Binding GetBills}" x:Name="BillGrid" Padding="0,5,0,0" Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
                   Background="{x:Null}" RowBackground="LightBlue" AlternatingRowBackground="LightGray" IsReadOnly="True" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
                   CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="True" 
                   HorizontalScrollBarVisibility="Disabled"  SelectionMode="Single" RowHeaderWidth="0" CanUserAddRows="False" FontSize="16" >
-            <DataGrid.ItemContainerStyle>
-                <Style TargetType="DataGridRow">
-                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
-                </Style>
-            </DataGrid.ItemContainerStyle>
+          
             <DataGrid.Columns>
                 
                 <DataGridTextColumn Header="Invoice Number" Binding="{Binding Invoice}" Width="*" />

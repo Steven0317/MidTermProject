@@ -7,7 +7,8 @@
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="2000"
-      Title="BillingInfo">
+      Title="BillingInfo"
+      >
 
     <Grid Background="LightGray">
         <Grid.RowDefinitions>
@@ -57,11 +58,11 @@
 
 
 
-        <Image  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
-        <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+        <Image  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding Image}" />
+        <TextBlock x:Name="Welcome" Grid.Row="4" Text="{Binding UserLogin}"  Grid.Column="0"   FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBlock Text="Payment Information" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
-        <TextBlock x:Name="LeftBox" Text=" Amount: " Grid.Row="5" Grid.Column="5" FontWeight="DemiBold" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock x:Name="LeftBox" Text="{Binding Left}" Grid.Row="5" Grid.Column="5" FontWeight="DemiBold" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
         <TextBlock x:Name="BillText" Text="no outstanding bills" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
 
@@ -69,25 +70,25 @@
         <TextBlock x:Name="EnterInfo" Text="Enter Billing Information" FontSize="18" FontWeight="DemiBold" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" />
 
         <TextBlock x:Name="CC" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Num" Grid.Row="7" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <xctk:MaskedTextBox x:Name="CBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Mask="9999-9999-9999-9999"/>
+        <xctk:MaskedTextBox Text="{Binding CreditCard}" x:Name="CBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" Mask="9999-9999-9999-9999"/>
 
         <TextBlock x:Name="Exp" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Credit Card Exp" Grid.Row="7" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="ExpBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="ExpBox"  Text="{Binding EXP}" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
         <TextBlock x:Name="Sec" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Security Code" Grid.Row="8" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="SecBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="SecBox" Text="{Binding Sec}" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
         <TextBlock x:Name="BillAddr" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing Address" Grid.Row="8" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="BillBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="BillBox" Text="{Binding Addr}" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
         <TextBlock x:Name="BillCity" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing City" Grid.Row="9" Grid.Column="6" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="CityBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="CityBox" Text="{Binding City}" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
         <TextBlock x:Name="BillZip" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Billing Zip Code" Grid.Row="9" Grid.Column="7" FontWeight="DemiBold" Height="16" Width="150" Padding="20,0,0,0" />
-        <TextBox x:Name="ZipBox" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
+        <TextBox x:Name="ZipBox" Text="{Binding Zip}" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="1" Template="{StaticResource TextBoxBaseControlTemplate}" Height="20" />
 
 
-        <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9"  Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Pay_Click" />
+        <Button x:Name="Pay" Content="Pay" Grid.Row="10" Grid.Column="9"  Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Command="{Binding PayEvent}" Template="{DynamicResource buttonborder}"  />
 
         <!-- Header Buttons-->
         

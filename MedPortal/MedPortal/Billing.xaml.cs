@@ -34,45 +34,19 @@ namespace MedPortal
         public Billing()
         {
             InitializeComponent();
-            Welcome.Text += LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
 
+            BillingVM bill = new BillingVM();
 
-            if (LoginPage.LoggedinUser.UserImage == null)
-            {
-                string stringPath = "UserImages/default-user-image.png";
-                BitmapImage logo = new BitmapImage();
-                logo.BeginInit();
-                logo.UriSource = new Uri(stringPath, UriKind.Relative);
-                logo.EndInit();
-
-                userImage.Source = logo;
-            }
-            else
-            {
-                userImage.Source = LoginPage.LoggedinUser.userImage;
-            }
-
-
+            DataContext = bill;
             userBill = getLoggedInBill();
 
    
-            userDoc = getLoggedInDocBill();
-
-            var item = BillGrid.SelectedItem;
-
-           
-                if (userBill.Any())
-                {
-                    BillGrid.ItemsSource = userBill;
-                }
-                if (!userDoc.Any())
-                {
-                    Pay.Visibility = Visibility.Hidden;
-                    BillGrid.Visibility = Visibility.Hidden;
-                    BillText.Visibility = Visibility.Visible;
-                }
-           
         }
+
+        /// <summary>
+        /// Sidebar navigation buttons 
+        /// </summary>
+        
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("Appointment.xaml", UriKind.Relative));
@@ -92,22 +66,28 @@ namespace MedPortal
         {
             NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
         }
+        private void Question_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Chat.xaml", UriKind.Relative));
+        }
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
+        }
 
+
+        /// <summary>
+        /// Logout button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Logout_Button_Click(object sender, RoutedEventArgs e)
         {
             LoginPage.LoggedinUser = null;
             NavigationService.Navigate(new Uri("LoginPage.xaml", UriKind.Relative));
         }
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("AccountManagement.xaml", UriKind.Relative));
-        }
-        private void Question_Button_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("Chat.xaml", UriKind.Relative));
-        }
-
+        
 
         private List<DocBill> getLoggedInBill()
         {
@@ -120,23 +100,6 @@ namespace MedPortal
             return userDocBill;
         }
 
-        private List<DocBill> getLoggedInDocBill()
-        {
-            List<DocBill> userBill = new List<DocBill>();
-
-            userBill = (from user in HomePage.DocCollection
-                        where user.social == LoginPage.LoggedinUser.social
-                        select user).ToList();
-
-            return userBill;
-        }
-
-        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-           
-        }
-
-
 
         private void Pay_Click(object sender, RoutedEventArgs e)
         {
@@ -145,41 +108,6 @@ namespace MedPortal
 
             NavigationService.Navigate(new Uri("BillingInfo.xaml", UriKind.Relative));
 
-            
-            
-            /*
-
-
-             foreach (DocBill bill in HomePage.DocCollection)
-             {
-                 if (bill.social == LoginPage.LoggedinUser.social)
-                 {
-                    foreach(DocBill user in userBill)
-                     {
-                         if(bill.left == user.left)
-                         {
-                             bill.left = bill.left - Convert.ToDouble(PayBox.Text);
-                         }
-                     }
-
-
-                 }
-             }
-
-             if (HomePage.DocCollection.Count == 0 && File.Exists("doctors.xml"))
-             {
-                 File.Delete("doctors.xml");
-             }
-             else
-             {
-                 using (FileStream filestream = new FileStream("doctors.xml", FileMode.Create, FileAccess.ReadWrite))
-                 {
-                     serializer.Serialize(filestream, HomePage.DocCollection);
-                 }
-
-             }
-
-            */
         }
     }
 }

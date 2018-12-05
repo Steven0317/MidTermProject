@@ -24,13 +24,13 @@
     <ExpirationDate>10/18/2018</ExpirationDate>
     <RefillAvailable>0</RefillAvailable>
   </RXinfo>
-  <RXinfo social="503-38-1908" prescriptionName="Diuril" scriptNumber="47394710247" date="09/21/2018" expiration="09/21/2019" refills="8">
+  <RXinfo social="503-38-1908" prescriptionName="Diuril" scriptNumber="47394710247" date="09/21/2018" expiration="09/21/2019" refills="2">
     <SSN>503-38-1908</SSN>
     <PrescriptionName>Diuril</PrescriptionName>
     <ScriptNumber>47394710247</ScriptNumber>
     <FillDate>09/21/2018</FillDate>
     <ExpirationDate>09/21/2019</ExpirationDate>
-    <RefillAvailable>8</RefillAvailable>
+    <RefillAvailable>2</RefillAvailable>
   </RXinfo>
   <RXinfo social="503-38-1908" prescriptionName="Anafril" scriptNumber="47394710248" date="03/06/2013" expiration="12/15/2018" refills="2">
     <SSN>503-38-1908</SSN>

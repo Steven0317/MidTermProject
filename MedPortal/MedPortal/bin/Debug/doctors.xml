@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <ArrayOfDocBill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <DocBill social="812-12-0912" office="Dr.Bailey" time="9:15" location="Watson Clinic South" bill="N" price="0" paid="Y" left="0" invoice="X421234-539">
+  <DocBill social="812-12-0912" office="Dr.Bailey" time="9:15" location="Watson Clinic South" bill="N" price="87.54" paid="N" left="87.54" invoice="X421234-539">
     <SSN>812-12-0912</SSN>
     <Office>Dr.Bailey</Office>
     <Time>9:15</Time>
     <Location>Watson Clinic South</Location>
     <Bill>N</Bill>
-    <PriceOfBill>0</PriceOfBill>
-    <IsBillPaid>Y</IsBillPaid>
-    <LeftToPay>0</LeftToPay>
+    <PriceOfBill>87.54</PriceOfBill>
+    <IsBillPaid>N</IsBillPaid>
+    <LeftToPay>87.54</LeftToPay>
     <Invoice>X421234-539</Invoice>
   </DocBill>
-  <DocBill social="503-38-1908" office="Dr.Miley" time="11:45" location="Easty Bay Medical" bill="Y" price="125.75" paid="N" left="48.53" invoice="A294628-721">
+  <DocBill social="503-38-1908" office="Dr.Miley" time="11:45" location="Easty Bay Medical" bill="Y" price="125.75" paid="N" left="0" invoice="A294628-721">
     <SSN>503-38-1908</SSN>
     <Office>Dr.Miley</Office>
     <Time>11:45</Time>
@@ -19,7 +19,7 @@
     <Bill>Y</Bill>
     <PriceOfBill>125.75</PriceOfBill>
     <IsBillPaid>N</IsBillPaid>
-    <LeftToPay>48.53</LeftToPay>
+    <LeftToPay>0</LeftToPay>
     <Invoice>A294628-721</Invoice>
   </DocBill>
 </ArrayOfDocBill>

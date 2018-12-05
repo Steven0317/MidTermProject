@@ -81,15 +81,19 @@
     <Compile Include="Appointment.xaml.cs">
       <DependentUpon>Appointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentVM.cs" />
     <Compile Include="Billing.xaml.cs">
       <DependentUpon>Billing.xaml</DependentUpon>
     </Compile>
     <Compile Include="BillingInfo.xaml.cs">
       <DependentUpon>BillingInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BillingInfoVM.cs" />
+    <Compile Include="BillingVM.cs" />
     <Compile Include="Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DelegateCommand.cs" />
     <Compile Include="Doc.cs" />
     <Compile Include="EBC.cs" />
     <Compile Include="HomePage.xaml.cs">
@@ -98,6 +102,7 @@
     <Compile Include="Prescription.xaml.cs">
       <DependentUpon>Prescription.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PrescriptionVM.cs" />
     <Compile Include="RXinfo.cs" />
     <Compile Include="ScheduleAppointment.xaml.cs">
       <DependentUpon>ScheduleAppointment.xaml</DependentUpon>

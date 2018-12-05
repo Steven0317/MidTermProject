@@ -25,14 +25,19 @@ namespace MedPortal
     public partial class HomePage : Page
     {
 
+        
+        
         XmlSerializer serializer = new XmlSerializer(typeof(List<DocBill>));
         XmlSerializer RXserializer = new XmlSerializer(typeof(List<RXinfo>));
         public static List<DocBill> DocCollection = new List<DocBill>();
         public static List<RXinfo> RXCollection = new List<RXinfo>();
         public static List<Doc> Doctors = new List<Doc>();
+       
 
         public HomePage()
         {
+           
+            
             InitializeComponent();
             Welcome.Text +=  LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
             snapshot.Text = LoginPage.LoggedinUser.FirstName + "'s Snapshots";
@@ -125,7 +130,7 @@ namespace MedPortal
             Doctors.Add(new Doc("South Shore Regional", "Dr. Swihart"));
 
         }
-
+    
         private List<RXinfo> getLoggedInRX()
         {
             List<RXinfo> userRX = new List<RXinfo>();
@@ -184,7 +189,12 @@ namespace MedPortal
 
             }
         }
+    
 
+        /// <summary>
+        /// appointment button clicks
+        /// </summary>
+       
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("Appointment.xaml", UriKind.Relative));

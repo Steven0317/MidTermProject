@@ -26,48 +26,17 @@ namespace MedPortal
         {
             InitializeComponent();
 
-            userObsrv = getLoggedInDoc();
+            AppointmentVM appt = new AppointmentVM();
 
-            Welcome.Text += LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
-
-
-            if(LoginPage.LoggedinUser.UserImage == null)
-            {
-                string stringPath = "UserImages/default-user-image.png";
-                BitmapImage logo = new BitmapImage();
-                logo.BeginInit();
-                logo.UriSource = new Uri(stringPath, UriKind.Relative);
-                logo.EndInit();
-
-                userImage.Source = logo;
-            }
-            else
-            {
-                userImage.Source = LoginPage.LoggedinUser.userImage;
-            }
-
-            if (userObsrv.Any())
-            {
-                DocGrid.ItemsSource = userObsrv;
-            }
-            else
-            {
-                DocGrid.Visibility = Visibility.Hidden;
-                DocText.Visibility = Visibility.Visible;
-                Appointment_Button2.Visibility = Visibility.Hidden;
-            }
+            DataContext = appt;
+            
         }
-        private ObservableCollection<DocBill> getLoggedInDoc()
-        {
-            List<DocBill> userDoc = new List<DocBill>();
-
-            userDoc = (from user in HomePage.DocCollection
-                      where user.social == LoginPage.LoggedinUser.social
-                      select user).ToList();
-
-            ObservableCollection<DocBill> temp = new ObservableCollection<DocBill>(userDoc);
-            return temp;
-        }
+       
+        
+        /// <summary>
+       /// SideBar buttons 
+       /// </summary>
+      
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("Appointment.xaml", UriKind.Relative));

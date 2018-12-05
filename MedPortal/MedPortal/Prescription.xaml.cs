@@ -26,70 +26,16 @@ namespace MedPortal
     public partial class Prescription : Page, INotifyPropertyChanged
     {
         XmlSerializer serializer = new XmlSerializer(typeof(List<RXinfo>));
-        //ObservableCollection<RXinfo> userObsrv { get; set; } = new ObservableCollection<RXinfo>();
         public List<RXinfo> userRX = new List<RXinfo>();
-
-
-        //func for updating selected prescription 
-        private ObservableCollection<RXinfo> userObsrv;
-        public ObservableCollection<RXinfo> UserObsrv
-        {
-            get { return userObsrv; }
-            set
-            {
-                userObsrv = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("userObsrv"));
-            }
-        }
-
 
         public Prescription()
         {
             InitializeComponent();
-            Welcome.Text += LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
-
-            userObsrv = getLoggedInRX();
-
-            if (LoginPage.LoggedinUser.UserImage == null)
-            {
-                string stringPath = "UserImages/default-user-image.png";
-                BitmapImage logo = new BitmapImage();
-                logo.BeginInit();
-                logo.UriSource = new Uri(stringPath, UriKind.Relative);
-                logo.EndInit();
-
-                userImage.Source = logo;
-            }
-            else
-            {
-                userImage.Source = LoginPage.LoggedinUser.userImage;
-            }
-
-            if (userObsrv.Any())
-            {
-                RXGrid.ItemsSource = userObsrv;
-            }
-            else
-            {
-                RXGrid.Visibility = Visibility.Hidden;
-                RXText.Visibility = Visibility.Visible;
-                Refill_Button.Visibility = Visibility.Hidden;
-            }
-
+            PrescriptionVM script = new PrescriptionVM();
+            DataContext = script;
+           
         }
 
-
-        private ObservableCollection<RXinfo> getLoggedInRX()
-        {
-            List<RXinfo> userRX = new List<RXinfo>();
-
-            userRX = (from user in HomePage.RXCollection
-                      where user.social == LoginPage.LoggedinUser.social
-                      select user).ToList();
-
-            ObservableCollection<RXinfo> temp = new ObservableCollection<RXinfo>(userRX);
-            return temp;
-        }
 
         private void Appointment_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -126,49 +72,9 @@ namespace MedPortal
             NavigationService.Navigate(new Uri("Chat.xaml", UriKind.Relative));
         }
 
-        private void Refill_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (RXGrid.SelectedItem != null)
-            {
-                RXinfo temp = (RXinfo)(RXGrid.SelectedItem);
-
-                if (temp.refills == 0)
-                {
-                    MessageBox.Show("No more refills available");
-                }
-                else
-                {
-                    foreach (RXinfo script in HomePage.RXCollection)
-                    {
-                        if (script.scriptNumber == temp.scriptNumber)
-                        {
-                            script.refills--;
-                            
-                        }
- 
-                    }
-
-                    RXGrid.ItemsSource = null;
-                    userObsrv = getLoggedInRX();
-                    RXGrid.ItemsSource = userObsrv;
-
-
-                    if (HomePage.RXCollection.Count == 0 && File.Exists("rx.xml"))
-                    {
-                        File.Delete("rx.xml");
-                    }
-                    else
-                    {
-                        using (FileStream filestream = new FileStream("rx.xml", FileMode.Create, FileAccess.ReadWrite))
-                        {
-                            serializer.Serialize(filestream, HomePage.RXCollection);
-                        }
-
-                    }
-
-                }
-            }
-        }
+      
+            
+        
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

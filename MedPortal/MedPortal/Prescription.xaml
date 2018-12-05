@@ -56,8 +56,8 @@
             </Hyperlink>
         </TextBlock>
         
-        <Image x:Name="userImage" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="UserImages\default-user-image.png" />
-        <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text=""  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+        <Image x:Name="userImage" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding Image}" />
+        <TextBlock x:Name="Welcome" Grid.Row="4"  Grid.Column="0" Text="{Binding UserLogin}"  FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
         
         <TextBlock  Text="Current Medication" FontSize="22" FontWeight="DemiBold" Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
         <TextBlock Text="Select the prescription that you want to refill, then click the  Refill button below." TextWrapping="WrapWithOverflow" Grid.Row="5" Grid.Column="6" TextAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -66,7 +66,7 @@
         <DataGrid x:Name="RXGrid" Grid.Row="6" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  GridLinesVisibility="None" 
                   Background="{x:Null}" RowBackground="LightGray" AlternatingRowBackground="LightBlue" AreRowDetailsFrozen="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
                   CanUserReorderColumns="False" BorderBrush="{x:Null}" RowHeight="20" AutoGenerateColumns="False" CanUserSortColumns="True" CanUserAddRows="False"
-                  HorizontalScrollBarVisibility="Disabled"  SelectionMode="Single" RowHeaderWidth="0"  SelectedItem="{Binding UserObsrv}" FontSize="16">
+                  HorizontalScrollBarVisibility="Disabled"  SelectionMode="Single" RowHeaderWidth="0"  SelectedItem="{Binding SelectedItem}" FontSize="16" ItemsSource="{Binding UserObsrv}">
             <DataGrid.Columns>
                 <DataGridTextColumn  Binding="{Binding ScriptNumber}"  Header="Prescription Number" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Prescription" Binding="{Binding PrescriptionName}" Width="*" IsReadOnly="True" />
@@ -78,7 +78,9 @@
 
         <TextBlock x:Name="RXText" Text="no current prescriptions" Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Visibility="Hidden"/>
 
-        <Button x:Name="Refill_Button" Content="Refill Request" Grid.Row="9" Grid.Column="9" Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Click="Refill_Button_Click"  />
+        <Button x:Name="Refill_Button" Content="Refill Request" Grid.Row="9" Grid.Column="9" Foreground="WhiteSmoke" HorizontalAlignment="Center" Height="30" Width="100"  VerticalAlignment="Center" Template="{DynamicResource buttonborder}" Command="{Binding Refill_Command}"   />
+        
+        
         <!-- Header Buttons-->
         <Button x:Name="Question_Button" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" VerticalAlignment="Stretch" Background="WhiteSmoke" BorderThickness="1" BorderBrush="LightGray" Click="Question_Button_Click" >
             <Grid>
