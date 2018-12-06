@@ -16,6 +16,9 @@ namespace MedPortal
 {
     public class BillingInfoVM : INotifyPropertyChanged
     {
+        /// <summary>
+        /// class init
+        /// </summary>
         public BillingInfoVM()
         {
             Left = Billing.UserBill.left.ToString();
@@ -162,27 +165,31 @@ namespace MedPortal
             bool zipValid;
 
             ccValid = string.IsNullOrWhiteSpace(_CreditCard) ? false : ValidateDigit(_CreditCard);
-            //CC.Foreground = ccValid ? Brushes.Black : Brushes.Coral;
+            
 
             expvalid = string.IsNullOrWhiteSpace(_exp) ? false : ValidateDigit(_exp);
-            //Exp.Foreground = expvalid ? Brushes.Black : Brushes.Coral;
+            
 
             secValid = string.IsNullOrWhiteSpace(_Sec) ? false : ValidateDigit(_Sec);
-            //Sec.Foreground = secValid ? Brushes.Black : Brushes.Coral;
+            
 
             addrValid = string.IsNullOrWhiteSpace(_addr) ? false : true;
-            //BillAddr.Foreground = addrValid ? Brushes.Black : Brushes.Coral;
+            
 
             cityValid = string.IsNullOrWhiteSpace(_City) ? false : true;
-            //BillCity.Foreground = cityValid ? Brushes.Black : Brushes.Coral;
+            
 
             zipValid = string.IsNullOrWhiteSpace(_Zip) ? false : ValidateDigit(_Zip);
-            //BillZip.Foreground = zipValid ? Brushes.Black : Brushes.Coral;
+           
 
 
             return ccValid && expvalid && secValid && addrValid && cityValid && zipValid;
         }
 
+        /// <summary>
+        /// validates entered info then pays the selected bill on file
+        /// </summary>
+        /// <param name="obj"></param>
         private void Pay_Click(object obj)
         {
             if (ValidateEntries())

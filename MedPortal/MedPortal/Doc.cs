@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MedPortal
 {
+    //helper class for drs
     public class Doc
     {
         public string location;

@@ -7,6 +7,10 @@ using System.Windows.Input;
 
 namespace MedPortal
 {
+    /// <summary>
+    /// thanks Aaron Austin for showing us this
+    /// still not sure what it does
+    /// </summary>
     public class DelegateCommand : ICommand
     {
         readonly Action<object> _execute;

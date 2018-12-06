@@ -12,7 +12,9 @@ namespace MedPortal
     class BillingVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
-
+        /// <summary>
+        /// class init
+        /// </summary>
         public BillingVM() {
 
             
@@ -74,7 +76,10 @@ namespace MedPortal
             }
         }
 
-
+        /// <summary>
+        /// returns users doctor bills
+        /// </summary>
+        /// <returns></returns>
         private List<DocBill> getLoggedInDocBill()
         {
             List<DocBill> userBill = new List<DocBill>();

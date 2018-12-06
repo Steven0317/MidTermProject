@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MedPortal
 {
+    /// <summary>
+    /// dictirs for south shore
+    /// </summary>
     public class SSR
     {
         public string doc1 { get; set; }

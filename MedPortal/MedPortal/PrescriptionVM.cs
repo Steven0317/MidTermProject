@@ -20,6 +20,10 @@ namespace MedPortal
         XmlSerializer serializer = new XmlSerializer(typeof(List<RXinfo>));
         public List<RXinfo> userRX = new List<RXinfo>();
 
+
+        /// <summary>
+        /// class init
+        /// </summary>
         public PrescriptionVM()
         {
             UserLogin = LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
@@ -93,7 +97,10 @@ namespace MedPortal
             }
         }
 
-
+        /// <summary>
+        /// function to get users scripts
+        /// </summary>
+        /// <returns></returns>
         private ObservableCollection<RXinfo> getLoggedInRX()
         {
             List<RXinfo> userRX = new List<RXinfo>();
@@ -106,7 +113,10 @@ namespace MedPortal
             return temp;
         }
 
-
+        /// <summary>
+        /// loops through and decrements the selected script if there are any available
+        /// </summary>
+        /// <param name="obj"></param>
         private void Refill_Click(object obj)
         {
             if (SelectedItem != null)
@@ -142,6 +152,7 @@ namespace MedPortal
 
                     }
 
+                    MessageBox.Show("RefillRequest submitted successfully");
                 }
             }
         }

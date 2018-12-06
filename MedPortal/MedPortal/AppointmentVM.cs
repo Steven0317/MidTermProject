@@ -14,7 +14,9 @@ namespace MedPortal
     {
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
        
-
+        /// <summary>
+        /// class init
+        /// </summary>
         public AppointmentVM()
         {
             UserLogin = LoginPage.LoggedinUser.FirstName + " " + LoginPage.LoggedinUser.LastName;
@@ -74,7 +76,10 @@ namespace MedPortal
             }
         }
 
-
+        /// <summary>
+        /// gets users appointments
+        /// </summary>
+        /// <returns></returns>
         private ObservableCollection<DocBill> getLoggedInDoc()
         {
             List<DocBill> userDoc = new List<DocBill>();

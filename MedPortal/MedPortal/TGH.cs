@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MedPortal
 {
+    /// <summary>
+    /// drs for tampa general
+    /// </summary>
     public class TGH
     {
         public string doc1 { get; set; }

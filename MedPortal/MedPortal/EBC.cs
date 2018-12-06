@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MedPortal
 {
+    /// <summary>
+    /// doctors for east bay
+    /// </summary>
     public class EBC
     {
         public string doc1 { get; set; }

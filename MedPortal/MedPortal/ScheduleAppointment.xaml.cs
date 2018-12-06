@@ -183,8 +183,15 @@ namespace MedPortal
             provider = combo.SelectedItem.ToString();
         }
         
+
+        /// <summary>
+        /// adds an appointment to the users list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Schedule_Click(object sender, RoutedEventArgs e)
         {
+
             HomePage.DocCollection.Add(new DocBill(userObsrv[0].SSN, combo.SelectedItem.ToString(), dateTimePicker.Text, location));
 
             string path = "doctors.xml";
@@ -197,7 +204,7 @@ namespace MedPortal
                     serializer.Serialize(filestream, HomePage.DocCollection);
                 }
             }
-
+            System.Windows.MessageBox.Show("Appointment Added!");
             NavigationService.Navigate(new Uri("Appointment.xaml", UriKind.Relative));
 
            
